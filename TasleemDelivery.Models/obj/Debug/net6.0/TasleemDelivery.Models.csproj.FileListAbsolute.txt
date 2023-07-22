@@ -1,0 +1,14 @@
+F:\FreeLancing Jobs\Zone\Tasleem\TasleemDelivery.Models\obj\Debug\net6.0\TasleemDelivery.Models.csproj.AssemblyReference.cache
+F:\FreeLancing Jobs\Zone\Tasleem\TasleemDelivery.Models\obj\Debug\net6.0\TasleemDelivery.Models.GeneratedMSBuildEditorConfig.editorconfig
+F:\FreeLancing Jobs\Zone\Tasleem\TasleemDelivery.Models\obj\Debug\net6.0\TasleemDelivery.Models.AssemblyInfoInputs.cache
+F:\FreeLancing Jobs\Zone\Tasleem\TasleemDelivery.Models\obj\Debug\net6.0\TasleemDelivery.Models.AssemblyInfo.cs
+F:\FreeLancing Jobs\Zone\Tasleem\TasleemDelivery.Models\obj\Debug\net6.0\TasleemDelivery.Models.csproj.CoreCompileInputs.cache
+F:\FreeLancing Jobs\Zone\Tasleem\TasleemDelivery.Models\bin\Debug\net6.0\TasleemDelivery.Models.deps.json
+F:\FreeLancing Jobs\Zone\Tasleem\TasleemDelivery.Models\bin\Debug\net6.0\TasleemDelivery.Models.runtimeconfig.json
+F:\FreeLancing Jobs\Zone\Tasleem\TasleemDelivery.Models\bin\Debug\net6.0\TasleemDelivery.Models.dll
+F:\FreeLancing Jobs\Zone\Tasleem\TasleemDelivery.Models\bin\Debug\net6.0\TasleemDelivery.Models.pdb
+F:\FreeLancing Jobs\Zone\Tasleem\TasleemDelivery.Models\obj\Debug\net6.0\TasleemDelivery.Models.dll
+F:\FreeLancing Jobs\Zone\Tasleem\TasleemDelivery.Models\obj\Debug\net6.0\refint\TasleemDelivery.Models.dll
+F:\FreeLancing Jobs\Zone\Tasleem\TasleemDelivery.Models\obj\Debug\net6.0\TasleemDelivery.Models.pdb
+F:\FreeLancing Jobs\Zone\Tasleem\TasleemDelivery.Models\obj\Debug\net6.0\TasleemDelivery.Models.genruntimeconfig.cache
+F:\FreeLancing Jobs\Zone\Tasleem\TasleemDelivery.Models\obj\Debug\net6.0\ref\TasleemDelivery.Models.dll
