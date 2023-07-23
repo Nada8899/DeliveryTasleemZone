@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,7 @@ namespace TasleemDelivery.Models
         [ForeignKey("Job")]
         public int JobId { get; set; }
         public virtual Job Job { get; set; }
-
+        [DefaultValue(false)]
         public bool IsDeleted { get; set; }
 
 

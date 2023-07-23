@@ -37,6 +37,7 @@ namespace TasleemDelivery.Models
 
         [DefaultValue(false)]
         public bool IsVerified { get; set; }
+        [DefaultValue(false)]
         public bool IsDeleted { get; set; }
     }
 }

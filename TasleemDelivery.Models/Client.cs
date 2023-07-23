@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TasleemDelivery.Models.InterFaces;
+using System.ComponentModel;
 
 namespace TasleemDelivery.Models
 {
@@ -21,12 +22,13 @@ namespace TasleemDelivery.Models
         public byte[] ProfileImg { get; set; }
        // public double Balance { get; set; }
         public string OverView { get; set; }
-        public virtual IEnumerable<Languge> Languges { get; set; }
+        public virtual IEnumerable<Language> Languges { get; set; }
 
         public virtual IEnumerable<Job> Jobs { get; set; }
 
         public virtual ApplicationUser ApplicationUser { get; set; }
 
+        [DefaultValue(false)]
         public bool IsDeleted { get; set; }
 
     }

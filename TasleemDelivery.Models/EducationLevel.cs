@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,8 @@ namespace TasleemDelivery.Models
         public string DeliveryID { get; set; }
 
         public virtual Delivery Delivery { get; set; }
+
+        [DefaultValue(false)]
         public bool IsDeleted { get; set; }
     }
 }

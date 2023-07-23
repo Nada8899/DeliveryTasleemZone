@@ -3,13 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasleemDelivery", "Tasleem\TasleemDelivery.csproj", "{B56FD2D8-94AA-47B1-BD53-EF0432108D70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasleemDelivery", "Tasleem\TasleemDelivery.csproj", "{B56FD2D8-94AA-47B1-BD53-EF0432108D70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasleemDelivery.Models", "TasleemDelivery.Models\TasleemDelivery.Models.csproj", "{FF017918-5E04-435B-B333-01E75B504A5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasleemDelivery.Models", "TasleemDelivery.Models\TasleemDelivery.Models.csproj", "{FF017918-5E04-435B-B333-01E75B504A5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasleemDelivery.Data", "TasleemDelivery.Data\TasleemDelivery.Data.csproj", "{EF75616B-2537-4864-9375-589C0801D232}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasleemDelivery.Data", "TasleemDelivery.Data\TasleemDelivery.Data.csproj", "{EF75616B-2537-4864-9375-589C0801D232}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasleemDelivery.Repository", "TasleemDelivery.Repository\TasleemDelivery.Repository.csproj", "{022B52A6-A90D-4927-BB9F-D29C9D177BEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasleemDelivery.Repository", "TasleemDelivery.Repository\TasleemDelivery.Repository.csproj", "{022B52A6-A90D-4927-BB9F-D29C9D177BEB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasleemDelivery.Service", "TasleemDelivery.Service\TasleemDelivery.Service.csproj", "{9CA8A86E-A537-41A0-8ABD-CDD37B5B0163}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasleemDelivery.Profiles", "TasleemDelivery.Profile\TasleemDelivery.Profiles.csproj", "{B9FD8989-8BA2-45DC-8B70-9199AE4AF823}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasleemDelivery.DTO", "TasleemDelivery.DTO\TasleemDelivery.DTO.csproj", "{0798DA04-93A1-4059-8537-3DB2991ED47A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +39,18 @@ Global
 		{022B52A6-A90D-4927-BB9F-D29C9D177BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{022B52A6-A90D-4927-BB9F-D29C9D177BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{022B52A6-A90D-4927-BB9F-D29C9D177BEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CA8A86E-A537-41A0-8ABD-CDD37B5B0163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CA8A86E-A537-41A0-8ABD-CDD37B5B0163}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CA8A86E-A537-41A0-8ABD-CDD37B5B0163}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CA8A86E-A537-41A0-8ABD-CDD37B5B0163}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9FD8989-8BA2-45DC-8B70-9199AE4AF823}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9FD8989-8BA2-45DC-8B70-9199AE4AF823}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9FD8989-8BA2-45DC-8B70-9199AE4AF823}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9FD8989-8BA2-45DC-8B70-9199AE4AF823}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0798DA04-93A1-4059-8537-3DB2991ED47A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0798DA04-93A1-4059-8537-3DB2991ED47A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0798DA04-93A1-4059-8537-3DB2991ED47A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0798DA04-93A1-4059-8537-3DB2991ED47A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,12 @@
+D:\Freelance-Jobs\New API\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.Profile.deps.json
+D:\Freelance-Jobs\New API\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.Profile.dll
+D:\Freelance-Jobs\New API\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.Profile.pdb
+D:\Freelance-Jobs\New API\TasleemDelivery.Profile\obj\Debug\net7.0\TasleemDelivery.Profile.csproj.AssemblyReference.cache
+D:\Freelance-Jobs\New API\TasleemDelivery.Profile\obj\Debug\net7.0\TasleemDelivery.Profile.GeneratedMSBuildEditorConfig.editorconfig
+D:\Freelance-Jobs\New API\TasleemDelivery.Profile\obj\Debug\net7.0\TasleemDelivery.Profile.AssemblyInfoInputs.cache
+D:\Freelance-Jobs\New API\TasleemDelivery.Profile\obj\Debug\net7.0\TasleemDelivery.Profile.AssemblyInfo.cs
+D:\Freelance-Jobs\New API\TasleemDelivery.Profile\obj\Debug\net7.0\TasleemDelivery.Profile.csproj.CoreCompileInputs.cache
+D:\Freelance-Jobs\New API\TasleemDelivery.Profile\obj\Debug\net7.0\TasleemDelivery.Profile.dll
+D:\Freelance-Jobs\New API\TasleemDelivery.Profile\obj\Debug\net7.0\refint\TasleemDelivery.Profile.dll
+D:\Freelance-Jobs\New API\TasleemDelivery.Profile\obj\Debug\net7.0\TasleemDelivery.Profile.pdb
+D:\Freelance-Jobs\New API\TasleemDelivery.Profile\obj\Debug\net7.0\ref\TasleemDelivery.Profile.dll

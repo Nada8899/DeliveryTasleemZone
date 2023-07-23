@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -17,8 +18,6 @@ namespace TasleemDelivery.Models
         public DateTime DeliveryMsgTime { get; set; }
         public DateTime ClientMsgTime { get; set; }
 
-        public bool IsDeleted { get; set; }
-
         [ForeignKey("Client")]
         public string ClientId { get; set; }
         public virtual Client Client { get; set; }
@@ -26,5 +25,7 @@ namespace TasleemDelivery.Models
         [ForeignKey("Delivery")]
         public string DeliveryId { get; set; }
         public virtual Delivery Delivery { get; set; }
+        [DefaultValue(false)]
+        public bool IsDeleted { get; set; }
     }
 }

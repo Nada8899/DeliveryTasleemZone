@@ -12,3 +12,17 @@ F:\FreeLancing Jobs\Zone\Tasleem\TasleemDelivery.Models\obj\Debug\net6.0\refint\
 F:\FreeLancing Jobs\Zone\Tasleem\TasleemDelivery.Models\obj\Debug\net6.0\TasleemDelivery.Models.pdb
 F:\FreeLancing Jobs\Zone\Tasleem\TasleemDelivery.Models\obj\Debug\net6.0\TasleemDelivery.Models.genruntimeconfig.cache
 F:\FreeLancing Jobs\Zone\Tasleem\TasleemDelivery.Models\obj\Debug\net6.0\ref\TasleemDelivery.Models.dll
+D:\Freelance-Jobs\New API\TasleemDelivery.Models\bin\Debug\net6.0\TasleemDelivery.Models.deps.json
+D:\Freelance-Jobs\New API\TasleemDelivery.Models\bin\Debug\net6.0\TasleemDelivery.Models.runtimeconfig.json
+D:\Freelance-Jobs\New API\TasleemDelivery.Models\bin\Debug\net6.0\TasleemDelivery.Models.dll
+D:\Freelance-Jobs\New API\TasleemDelivery.Models\bin\Debug\net6.0\TasleemDelivery.Models.pdb
+D:\Freelance-Jobs\New API\TasleemDelivery.Models\obj\Debug\net6.0\TasleemDelivery.Models.csproj.AssemblyReference.cache
+D:\Freelance-Jobs\New API\TasleemDelivery.Models\obj\Debug\net6.0\TasleemDelivery.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Freelance-Jobs\New API\TasleemDelivery.Models\obj\Debug\net6.0\TasleemDelivery.Models.AssemblyInfoInputs.cache
+D:\Freelance-Jobs\New API\TasleemDelivery.Models\obj\Debug\net6.0\TasleemDelivery.Models.AssemblyInfo.cs
+D:\Freelance-Jobs\New API\TasleemDelivery.Models\obj\Debug\net6.0\TasleemDelivery.Models.csproj.CoreCompileInputs.cache
+D:\Freelance-Jobs\New API\TasleemDelivery.Models\obj\Debug\net6.0\TasleemDelivery.Models.dll
+D:\Freelance-Jobs\New API\TasleemDelivery.Models\obj\Debug\net6.0\refint\TasleemDelivery.Models.dll
+D:\Freelance-Jobs\New API\TasleemDelivery.Models\obj\Debug\net6.0\TasleemDelivery.Models.pdb
+D:\Freelance-Jobs\New API\TasleemDelivery.Models\obj\Debug\net6.0\TasleemDelivery.Models.genruntimeconfig.cache
+D:\Freelance-Jobs\New API\TasleemDelivery.Models\obj\Debug\net6.0\ref\TasleemDelivery.Models.dll

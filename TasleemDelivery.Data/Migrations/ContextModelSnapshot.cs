@@ -226,7 +226,6 @@ namespace TasleemDelivery.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<byte[]>("ProfileImg")
-                        .IsRequired()
                         .HasColumnType("varbinary(max)");
 
                     b.Property<string>("SecurityStamp")
@@ -329,13 +328,12 @@ namespace TasleemDelivery.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Balance")
+                    b.Property<double?>("Balance")
                         .HasColumnType("float");
 
-                    b.Property<int>("EducationLevelID")
+                    b.Property<int?>("EducationLevelID")
                         .HasColumnType("int");
 
                     b.Property<string>("FullName")
@@ -346,17 +344,15 @@ namespace TasleemDelivery.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("OverView")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Points")
+                    b.Property<int?>("Points")
                         .HasColumnType("int");
 
                     b.Property<byte[]>("ProfileImg")
-                        .IsRequired()
                         .HasColumnType("varbinary(max)");
 
-                    b.Property<double>("YearExperinces")
+                    b.Property<double?>("YearExperinces")
                         .HasColumnType("float");
 
                     b.HasKey("Id");
@@ -452,7 +448,7 @@ namespace TasleemDelivery.Data.Migrations
                     b.ToTable("Job");
                 });
 
-            modelBuilder.Entity("TasleemDelivery.Models.Languge", b =>
+            modelBuilder.Entity("TasleemDelivery.Models.Language", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -772,9 +768,7 @@ namespace TasleemDelivery.Data.Migrations
                 {
                     b.HasOne("TasleemDelivery.Models.EducationLevel", "EducationLevel")
                         .WithMany()
-                        .HasForeignKey("EducationLevelID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("EducationLevelID");
 
                     b.HasOne("TasleemDelivery.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
@@ -825,7 +819,7 @@ namespace TasleemDelivery.Data.Migrations
                     b.Navigation("Location");
                 });
 
-            modelBuilder.Entity("TasleemDelivery.Models.Languge", b =>
+            modelBuilder.Entity("TasleemDelivery.Models.Language", b =>
                 {
                     b.HasOne("TasleemDelivery.Models.ApplicationUser", "ApplicationUser")
                         .WithMany("Languges")

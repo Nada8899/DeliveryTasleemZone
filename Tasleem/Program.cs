@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -6,8 +8,10 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Diagnostics;
 using System.Text;
+using TasleemDelivery.Config;
 using TasleemDelivery.Data;
 using TasleemDelivery.Models;
+using TasleemDelivery.Profiles;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options => {
@@ -18,6 +22,14 @@ builder.Services.AddCors(options => {
 
 
 });
+
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+
+builder.Host.ConfigureContainer<ContainerBuilder>(opt =>
+    opt.RegisterModule(new AutoFacModule()));
+
+builder.Services.AddAutoMapper(typeof(RegisterProfile).Assembly);
+
 builder.Services.AddDbContext<Context>(options =>
               options.UseSqlServer(builder.Configuration.GetConnectionString("cs"))
               .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
@@ -84,7 +96,7 @@ builder.Services.AddSwaggerGen(swagger =>
     swagger.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
-        Title = "ASP.NET 5 Web API",
+        Title = "ASP.NET 7 Web API",
         Description = " ITI Project"
     });
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -26,7 +27,7 @@ namespace TasleemDelivery.Models
         [ForeignKey("Client")]
         public string ClientId { get; set; }
         public virtual Client Client { get; set; }
-
+        [DefaultValue(false)]
         public bool IsDeleted { get; set; }
 
     }

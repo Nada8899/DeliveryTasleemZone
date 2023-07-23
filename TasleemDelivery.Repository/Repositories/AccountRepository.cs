@@ -13,21 +13,11 @@ namespace TasleemDelivery.Repository.Repositories
 {
     public class AccountRepository :IAccountRepository
     {
-
-
         Context _context;
-        private readonly UserManager<ApplicationUser> userManager;
-     
 
-
-
-        public AccountRepository(Context context, UserManager<ApplicationUser> userManager)
+        public AccountRepository(Context context)
         {
             _context = context;
-            this.userManager = userManager;
-      
-
-       
         }
 
 
@@ -53,5 +43,6 @@ namespace TasleemDelivery.Repository.Repositories
             _context.Client.Add(client);
 
         }
+
     }
 }

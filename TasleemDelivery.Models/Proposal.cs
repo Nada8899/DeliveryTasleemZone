@@ -27,7 +27,7 @@ namespace TasleemDelivery.Models
         [ForeignKey("Job")]
         public int JobID { get; set; }
         public virtual Job Job { get; set; }
-
+        [DefaultValue(false)]
         public bool IsDeleted { get; set; }
 
     }

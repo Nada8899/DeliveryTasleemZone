@@ -10,9 +10,9 @@ namespace TasleemDelivery.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        public byte[] ProfileImg { get; set; }
+        public byte[] ?ProfileImg { get; set; }
 
-        public virtual IEnumerable<Languge> Languges { get; set; }
+        public virtual IEnumerable<Language> ?Languges { get; set; }
 
 
         [DefaultValue(false)]
