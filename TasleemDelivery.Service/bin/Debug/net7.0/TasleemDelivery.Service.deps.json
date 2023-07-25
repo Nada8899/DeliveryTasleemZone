@@ -687,6 +687,12 @@
         }
       },
       "TasleemDelivery.DTO/1.0.0": {
+        "dependencies": {
+          "TasleemDelivery.Data": "1.0.0",
+          "TasleemDelivery.Models": "1.0.0",
+          "TasleemDelivery.Repository": "1.0.0",
+          "TasleemDelivery.SharedValidation": "1.0.0"
+        },
         "runtime": {
           "TasleemDelivery.DTO.dll": {}
         }
@@ -706,6 +712,14 @@
         },
         "runtime": {
           "TasleemDelivery.Repository.dll": {}
+        }
+      },
+      "TasleemDelivery.SharedValidation/1.0.0": {
+        "dependencies": {
+          "TasleemDelivery.Data": "1.0.0"
+        },
+        "runtime": {
+          "TasleemDelivery.SharedValidation.dll": {}
         }
       }
     }
@@ -1201,6 +1215,11 @@
       "sha512": ""
     },
     "TasleemDelivery.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TasleemDelivery.SharedValidation/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

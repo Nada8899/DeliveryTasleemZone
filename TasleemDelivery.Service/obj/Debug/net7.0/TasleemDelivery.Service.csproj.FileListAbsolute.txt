@@ -19,3 +19,5 @@ D:\Freelance-Jobs\New API\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelive
 D:\Freelance-Jobs\New API\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Data.pdb
 D:\Freelance-Jobs\New API\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Models.pdb
 D:\Freelance-Jobs\New API\TasleemDelivery.Service\obj\Debug\net7.0\TasleemDelivery.Service.csproj.CopyComplete
+D:\Freelance-Jobs\New API\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.SharedValidation.dll
+D:\Freelance-Jobs\New API\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.SharedValidation.pdb

@@ -15,3 +15,9 @@ D:\Freelance-Jobs\New API\TasleemDelivery.Profile\obj\Debug\net7.0\TasleemDelive
 D:\Freelance-Jobs\New API\TasleemDelivery.Profile\obj\Debug\net7.0\refint\TasleemDelivery.Profiles.dll
 D:\Freelance-Jobs\New API\TasleemDelivery.Profile\obj\Debug\net7.0\TasleemDelivery.Profiles.pdb
 D:\Freelance-Jobs\New API\TasleemDelivery.Profile\obj\Debug\net7.0\ref\TasleemDelivery.Profiles.dll
+D:\Freelance-Jobs\New API\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.Data.dll
+D:\Freelance-Jobs\New API\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.Data.pdb
+D:\Freelance-Jobs\New API\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.Repository.dll
+D:\Freelance-Jobs\New API\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.Repository.pdb
+D:\Freelance-Jobs\New API\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.SharedValidation.dll
+D:\Freelance-Jobs\New API\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.SharedValidation.pdb

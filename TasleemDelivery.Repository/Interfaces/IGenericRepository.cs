@@ -9,9 +9,9 @@ namespace TasleemDelivery.Repository.Interfaces
 {
     public interface IGenericRepository<T, Y>
     {
-        IQueryable<T> GetAll();
-        IQueryable<T> Get(Expression<Func<T, bool>> expression);
-        T GetByID(Y id);
+        IQueryable<T> GetAll(params string[] includePaths);
+        IQueryable<T> GetByExpression(Expression<Func<T, bool>> expression, params string[] includePaths);
+        T GetByID(Y id, params string[] includePaths);
         T Add(T entity);
         Task<T> AddAsync(T entity);
         void Update(T entity);

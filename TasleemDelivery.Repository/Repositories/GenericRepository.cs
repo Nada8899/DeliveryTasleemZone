@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata;
 using System;
 using System.Collections.Generic;
@@ -22,19 +23,48 @@ namespace TasleemDelivery.Repository.Repositories
             _context = context;
         }
 
-        public IQueryable<T> GetAll()
+        public IQueryable<T> GetAll(params string[] includePaths )
         {
-            return _context.Set<T>();
+            IQueryable<T> entityList= _context.Set<T>();
+
+            if (entityList != null && includePaths != null && includePaths.Length > 0)
+            {
+                foreach (string include in includePaths)
+                {
+                    entityList= entityList.Include(include);
+                }
+            }
+
+            return entityList;
         }
 
-        public IQueryable<T> Get(Expression<Func<T, bool>> expression)
+        public IQueryable<T> GetByExpression(Expression<Func<T, bool>> expression, params string[] includePaths)
         {
-            return _context.Set<T>().Where(expression);
+            IQueryable<T> entityList= _context.Set<T>().Where(expression);
+
+            if(entityList != null && includePaths !=null && includePaths.Length>0)
+            {
+                foreach(string include in includePaths)
+                {
+                    entityList= entityList.Include(include);
+                }
+            }
+
+            return entityList;
         }
 
-        public T GetByID(Y id)
+        public T GetByID(Y id, params string[] includePaths)
         {
-            return _context.Set<T>().FirstOrDefault(x => x.Id.Equals(id));
+            IQueryable<T> entity= _context.Set<T>();
+
+            if (entity != null && includePaths != null && includePaths.Length > 0)
+            {
+                foreach (string include in includePaths)
+                {
+                    entity = entity.Include(include);
+                }
+            }
+            return entity.FirstOrDefault(x => x.Id.Equals(id));
         }
 
         public T Add(T entity)

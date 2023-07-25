@@ -7,14 +7,12 @@ using System.Threading.Tasks;
 
 namespace TasleemDelivery.DTO
 {
-    public class DeliveryRegisterDTO
+    public class LoginUserDTO
     {
-        public string ?DeliveryId { get; set; }
-        public string FullName { get; set; }
+        [Required(ErrorMessage = "Username is required")]
         public string UserName { get; set; }
-        [DataType(DataType.Password)]
+        [Required(ErrorMessage = "Password is required")]
         public string Password { get; set; }
-        [Compare("Password")]
-        public string ConfirmPassword { get; set; }
+
     }
 }

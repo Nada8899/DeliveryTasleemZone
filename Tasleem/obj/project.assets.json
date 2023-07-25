@@ -1405,6 +1405,12 @@
       "TasleemDelivery.DTO/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "TasleemDelivery.Data": "1.0.0",
+          "TasleemDelivery.Models": "1.0.0",
+          "TasleemDelivery.Repository": "1.0.0",
+          "TasleemDelivery.SharedValidation": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/TasleemDelivery.DTO.dll": {}
         },
@@ -1469,6 +1475,19 @@
         },
         "runtime": {
           "bin/placeholder/TasleemDelivery.Service.dll": {}
+        }
+      },
+      "TasleemDelivery.SharedValidation/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "TasleemDelivery.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TasleemDelivery.SharedValidation.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TasleemDelivery.SharedValidation.dll": {}
         }
       }
     }
@@ -4324,6 +4343,11 @@
       "type": "project",
       "path": "../TasleemDelivery.Service/TasleemDelivery.Service.csproj",
       "msbuildProject": "../TasleemDelivery.Service/TasleemDelivery.Service.csproj"
+    },
+    "TasleemDelivery.SharedValidation/1.0.0": {
+      "type": "project",
+      "path": "../TasleemDelivery.SharedValidation/TasleemDelivery.SharedValidation.csproj",
+      "msbuildProject": "../TasleemDelivery.SharedValidation/TasleemDelivery.SharedValidation.csproj"
     }
   },
   "projectFileDependencyGroups": {

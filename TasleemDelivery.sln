@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasleemDelivery.Profiles", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasleemDelivery.DTO", "TasleemDelivery.DTO\TasleemDelivery.DTO.csproj", "{0798DA04-93A1-4059-8537-3DB2991ED47A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasleemDelivery.SharedValidation", "TasleemDelivery.SharedValidation\TasleemDelivery.SharedValidation.csproj", "{58E16DF7-8830-4DA2-B946-794E41D125C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{0798DA04-93A1-4059-8537-3DB2991ED47A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0798DA04-93A1-4059-8537-3DB2991ED47A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0798DA04-93A1-4059-8537-3DB2991ED47A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58E16DF7-8830-4DA2-B946-794E41D125C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58E16DF7-8830-4DA2-B946-794E41D125C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58E16DF7-8830-4DA2-B946-794E41D125C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58E16DF7-8830-4DA2-B946-794E41D125C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

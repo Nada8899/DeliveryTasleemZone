@@ -20,11 +20,42 @@ namespace TasleemDelivery.Service
             _mapper= mapper;
         }
 
-        public DeliveryRegisterDTO AddDelivery(DeliveryRegisterDTO registerDTO)
+        public RegisterDTO AddDelivery(RegisterDTO registerDTO)
         {
+            //By using Mapper he does it mapping auto because the same name and dataType
+            // delivery.Id = registerDTO.Id;
             Delivery delivery = _mapper.Map<Delivery>(registerDTO);
-            delivery.Id = registerDTO.DeliveryId;
+
             _unitOfWork.DeliveryRepository.Add(delivery);
+            _unitOfWork.SaveChanges();
+
+            return registerDTO;
+        }
+        public RegisterDTO AddClient(RegisterDTO registerDTO) 
+        {
+            Client client=_mapper.Map<Client>(registerDTO);
+
+            _unitOfWork.ClientRepository.Add(client);
+            _unitOfWork.SaveChanges();
+
+            return registerDTO;
+        }
+
+        public RegisterDTO AddAdmin(RegisterDTO registerDTO)
+        {
+           Admin admin =_mapper.Map<Admin>(registerDTO);
+
+            _unitOfWork.AdminRepository.Add(admin);
+            _unitOfWork.SaveChanges();
+
+            return registerDTO;
+        }
+
+        public RegisterDTO AddSubAdmin(RegisterDTO registerDTO)
+        {
+            SubAdmin subAdmin = _mapper.Map<SubAdmin>(registerDTO);
+
+            _unitOfWork.SubAdminRepository.Add(subAdmin);
             _unitOfWork.SaveChanges();
 
             return registerDTO;

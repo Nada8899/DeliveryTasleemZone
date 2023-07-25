@@ -11,8 +11,12 @@ namespace TasleemDelivery.Models
         [Key]
         [ForeignKey("ApplicationUser")]
         public string Id { get; set; }
-        public string FullName { get; set; }
-        public string ?Address { get; set; }
+        public string ?FullName { get; set; }
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; }
+        public string Question { get; set; }
+        public string Answer { get; set; }
+        public string? Address { get; set; }
         public byte[] ?ProfileImg { get; set; }
         public double ?Balance { get; set; }
         public int ?Points { get; set; }

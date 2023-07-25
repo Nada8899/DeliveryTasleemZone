@@ -13,8 +13,13 @@ namespace TasleemDelivery.Profiles
     {
         public RegisterProfile()
         {
-            CreateMap<DeliveryRegisterDTO, ApplicationUser>();
-            CreateMap<DeliveryRegisterDTO, Delivery>();
+            CreateMap<RegisterDTO, ApplicationUser>()
+                .ForMember(src=>src.Id,opt=>opt.Ignore());
+
+            CreateMap<RegisterDTO, Delivery>();
+            CreateMap<RegisterDTO, Client>();
+            CreateMap<RegisterDTO, Admin>();
+            CreateMap<RegisterDTO,SubAdmin>();
         }
     }
 }

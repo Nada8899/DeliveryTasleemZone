@@ -1,0 +1,17 @@
+D:\Freelance-Jobs\New API\TasleemDelivery.SharedValidation\bin\Debug\net7.0\TasleemDelivery.SharedValidation.deps.json
+D:\Freelance-Jobs\New API\TasleemDelivery.SharedValidation\bin\Debug\net7.0\TasleemDelivery.SharedValidation.dll
+D:\Freelance-Jobs\New API\TasleemDelivery.SharedValidation\bin\Debug\net7.0\TasleemDelivery.SharedValidation.pdb
+D:\Freelance-Jobs\New API\TasleemDelivery.SharedValidation\bin\Debug\net7.0\TasleemDelivery.Data.dll
+D:\Freelance-Jobs\New API\TasleemDelivery.SharedValidation\bin\Debug\net7.0\TasleemDelivery.Models.dll
+D:\Freelance-Jobs\New API\TasleemDelivery.SharedValidation\bin\Debug\net7.0\TasleemDelivery.Data.pdb
+D:\Freelance-Jobs\New API\TasleemDelivery.SharedValidation\bin\Debug\net7.0\TasleemDelivery.Models.pdb
+D:\Freelance-Jobs\New API\TasleemDelivery.SharedValidation\obj\Debug\net7.0\TasleemDelivery.SharedValidation.csproj.AssemblyReference.cache
+D:\Freelance-Jobs\New API\TasleemDelivery.SharedValidation\obj\Debug\net7.0\TasleemDelivery.SharedValidation.GeneratedMSBuildEditorConfig.editorconfig
+D:\Freelance-Jobs\New API\TasleemDelivery.SharedValidation\obj\Debug\net7.0\TasleemDelivery.SharedValidation.AssemblyInfoInputs.cache
+D:\Freelance-Jobs\New API\TasleemDelivery.SharedValidation\obj\Debug\net7.0\TasleemDelivery.SharedValidation.AssemblyInfo.cs
+D:\Freelance-Jobs\New API\TasleemDelivery.SharedValidation\obj\Debug\net7.0\TasleemDelivery.SharedValidation.csproj.CoreCompileInputs.cache
+D:\Freelance-Jobs\New API\TasleemDelivery.SharedValidation\obj\Debug\net7.0\TasleemDelivery.SharedValidation.csproj.CopyComplete
+D:\Freelance-Jobs\New API\TasleemDelivery.SharedValidation\obj\Debug\net7.0\TasleemDelivery.SharedValidation.dll
+D:\Freelance-Jobs\New API\TasleemDelivery.SharedValidation\obj\Debug\net7.0\refint\TasleemDelivery.SharedValidation.dll
+D:\Freelance-Jobs\New API\TasleemDelivery.SharedValidation\obj\Debug\net7.0\TasleemDelivery.SharedValidation.pdb
+D:\Freelance-Jobs\New API\TasleemDelivery.SharedValidation\obj\Debug\net7.0\ref\TasleemDelivery.SharedValidation.dll

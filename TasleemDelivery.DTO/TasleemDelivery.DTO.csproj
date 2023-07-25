@@ -6,4 +6,11 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TasleemDelivery.Data\TasleemDelivery.Data.csproj" />
+    <ProjectReference Include="..\TasleemDelivery.Models\TasleemDelivery.Models.csproj" />
+    <ProjectReference Include="..\TasleemDelivery.Repository\TasleemDelivery.Repository.csproj" />
+    <ProjectReference Include="..\TasleemDelivery.SharedValidation\TasleemDelivery.SharedValidation.csproj" />
+  </ItemGroup>
+
 </Project>
