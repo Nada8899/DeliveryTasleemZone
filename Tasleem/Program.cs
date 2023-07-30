@@ -29,6 +29,8 @@ builder.Host.ConfigureContainer<ContainerBuilder>(opt =>
     opt.RegisterModule(new AutoFacModule()));
 
 builder.Services.AddAutoMapper(typeof(RegisterProfile).Assembly);
+builder.Services.AddAutoMapper(typeof(JobProfile).Assembly);
+
 
 builder.Services.AddDbContext<Context>(options =>
               options.UseSqlServer(builder.Configuration.GetConnectionString("cs"))

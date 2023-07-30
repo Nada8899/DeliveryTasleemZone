@@ -21,6 +21,8 @@ namespace TasleemDelivery.Config
             builder.RegisterType(typeof(UnitOfWork)).As(typeof(IUnitOfWork)).InstancePerLifetimeScope();
             builder.RegisterType(typeof(AccountRepository)).As(typeof(IAccountRepository)).InstancePerLifetimeScope();
             builder.RegisterAssemblyTypes(typeof(AccountService).Assembly).InstancePerLifetimeScope();
+            builder.RegisterAssemblyTypes(typeof(JobService).Assembly).InstancePerLifetimeScope();
+
         }
     }
 }

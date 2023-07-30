@@ -12,7 +12,7 @@ using TasleemDelivery.Data;
 namespace TasleemDelivery.Data.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230723154637_init")]
+    [Migration("20230730083149_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -164,19 +164,28 @@ namespace TasleemDelivery.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Answer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<byte[]>("ProfileImg")
-                        .IsRequired()
                         .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("Question")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -229,7 +238,6 @@ namespace TasleemDelivery.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<byte[]>("ProfileImg")
-                        .IsRequired()
                         .HasColumnType("varbinary(max)");
 
                     b.Property<string>("SecurityStamp")
@@ -303,23 +311,31 @@ namespace TasleemDelivery.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Answer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("OverView")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("ProfileImg")
-                        .IsRequired()
                         .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("Question")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -334,14 +350,21 @@ namespace TasleemDelivery.Data.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Answer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<double?>("Balance")
                         .HasColumnType("float");
 
                     b.Property<int?>("EducationLevelID")
                         .HasColumnType("int");
 
-                    b.Property<string>("FullName")
+                    b.Property<string>("Email")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
@@ -355,6 +378,10 @@ namespace TasleemDelivery.Data.Migrations
 
                     b.Property<byte[]>("ProfileImg")
                         .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("Question")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double?>("YearExperinces")
                         .HasColumnType("float");
@@ -409,9 +436,8 @@ namespace TasleemDelivery.Data.Migrations
                     b.Property<DateTime?>("AcceptedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Budget")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<double>("Budget")
+                        .HasColumnType("float");
 
                     b.Property<string>("ClientId")
                         .IsRequired()
@@ -657,19 +683,28 @@ namespace TasleemDelivery.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Answer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<byte[]>("ProfileImg")
-                        .IsRequired()
                         .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("Question")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -681,7 +716,7 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -690,7 +725,7 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasOne("TasleemDelivery.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -699,7 +734,7 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasOne("TasleemDelivery.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -708,13 +743,13 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("TasleemDelivery.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -723,7 +758,7 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasOne("TasleemDelivery.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -732,7 +767,7 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasOne("TasleemDelivery.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
                         .HasForeignKey("Id")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("ApplicationUser");
@@ -743,13 +778,13 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasOne("TasleemDelivery.Models.Client", "Client")
                         .WithMany()
                         .HasForeignKey("ClientId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("TasleemDelivery.Models.Delivery", "Delivery")
                         .WithMany()
                         .HasForeignKey("DeliveryId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Client");
@@ -762,7 +797,7 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasOne("TasleemDelivery.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
                         .HasForeignKey("Id")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("ApplicationUser");
@@ -777,7 +812,7 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasOne("TasleemDelivery.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
                         .HasForeignKey("Id")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("ApplicationUser");
@@ -790,7 +825,7 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasOne("TasleemDelivery.Models.Delivery", "Delivery")
                         .WithMany()
                         .HasForeignKey("DeliveryID")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Delivery");
@@ -801,19 +836,19 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasOne("TasleemDelivery.Models.Client", "Client")
                         .WithMany("Jobs")
                         .HasForeignKey("ClientId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("TasleemDelivery.Models.Delivery", "Delivery")
                         .WithMany("PreviousJobs")
                         .HasForeignKey("DeliveryId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("TasleemDelivery.Models.Location", "Location")
                         .WithMany("Jobs")
                         .HasForeignKey("LocationId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Client");
@@ -828,7 +863,7 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasOne("TasleemDelivery.Models.ApplicationUser", "ApplicationUser")
                         .WithMany("Languges")
                         .HasForeignKey("ApplicationUserID")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("TasleemDelivery.Models.Client", null)
@@ -847,13 +882,13 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasOne("TasleemDelivery.Models.Delivery", "Delivery")
                         .WithMany("Proposals")
                         .HasForeignKey("DeliveryId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("TasleemDelivery.Models.Job", "Job")
                         .WithMany()
                         .HasForeignKey("JobID")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Delivery");
@@ -866,7 +901,7 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasOne("TasleemDelivery.Models.Client", "Client")
                         .WithMany()
                         .HasForeignKey("ClientId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("TasleemDelivery.Models.Delivery", null)
@@ -876,7 +911,7 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasOne("TasleemDelivery.Models.Job", "Job")
                         .WithMany("Reviews")
                         .HasForeignKey("JobId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Client");
@@ -889,13 +924,13 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasOne("TasleemDelivery.Models.Delivery", "Delivery")
                         .WithMany("SavedJobs")
                         .HasForeignKey("DeliveryId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("TasleemDelivery.Models.Job", "Job")
                         .WithMany("SavedJobs")
                         .HasForeignKey("JobId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Delivery");
@@ -908,7 +943,7 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasOne("TasleemDelivery.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
                         .HasForeignKey("ApplicationUserID")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("TasleemDelivery.Models.Delivery", null)
@@ -923,7 +958,7 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasOne("TasleemDelivery.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
                         .HasForeignKey("Id")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("ApplicationUser");

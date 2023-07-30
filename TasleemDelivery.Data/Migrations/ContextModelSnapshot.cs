@@ -433,16 +433,14 @@ namespace TasleemDelivery.Data.Migrations
                     b.Property<DateTime?>("AcceptedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Budget")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<double>("Budget")
+                        .HasColumnType("float");
 
                     b.Property<string>("ClientId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("DeliveryId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Details")
@@ -839,9 +837,7 @@ namespace TasleemDelivery.Data.Migrations
 
                     b.HasOne("TasleemDelivery.Models.Delivery", "Delivery")
                         .WithMany("PreviousJobs")
-                        .HasForeignKey("DeliveryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DeliveryId");
 
                     b.HasOne("TasleemDelivery.Models.Location", "Location")
                         .WithMany("Jobs")

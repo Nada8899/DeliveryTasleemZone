@@ -17,7 +17,7 @@ namespace TasleemDelivery.Models
         public string Question { get; set; }
         public string Answer { get; set; }
         public string? Address { get; set; }
-        public byte[] ?ProfileImg { get; set; }
+        public byte[]? ProfileImg { get; set; }
         public double ?Balance { get; set; }
         public int ?Points { get; set; }
         public string ?OverView { get; set; }

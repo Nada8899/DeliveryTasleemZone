@@ -14,12 +14,14 @@ namespace TasleemDelivery.Profiles
         public RegisterProfile()
         {
             CreateMap<RegisterDTO, ApplicationUser>()
-                .ForMember(src=>src.Id,opt=>opt.Ignore());
+                .ForMember(src => src.Id, opt => opt.Ignore());
+                //.ForMember(src => src.ProfileImg, opt => opt.Ignore());
 
             CreateMap<RegisterDTO, Delivery>();
             CreateMap<RegisterDTO, Client>();
             CreateMap<RegisterDTO, Admin>();
             CreateMap<RegisterDTO,SubAdmin>();
+
         }
     }
 }
