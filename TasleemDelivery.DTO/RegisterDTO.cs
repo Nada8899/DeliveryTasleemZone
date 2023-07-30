@@ -11,7 +11,7 @@ namespace TasleemDelivery.DTO
         public string ?Id { get; set; }
         public string UserName { get; set; }
         [DataType(DataType.EmailAddress)]
-        [UniqueAttribute(typeof(Delivery), "Email")]
+      //  [UniqueAttribute(typeof(Delivery), "Email")]
         public string Email { get; set; }
         public string Question { get; set; }
         public string Answer { get; set; }

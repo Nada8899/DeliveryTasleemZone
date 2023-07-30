@@ -18,9 +18,9 @@ namespace TasleemDelivery.Models
         [DefaultValue(false)]
         public bool IsDeleted { get; set; }
 
-        [ForeignKey("ApplicationUser")]
-        public string ApplicationUserID { get; set; }
+        [ForeignKey("Delivery")]
+        public string DeliveryID { get; set; }
 
-        public virtual ApplicationUser ApplicationUser { get; set; }
+        public virtual Delivery Delivery { get; set; }
     }
 }

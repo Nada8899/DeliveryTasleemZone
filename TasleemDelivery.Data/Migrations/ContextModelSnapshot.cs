@@ -652,11 +652,8 @@ namespace TasleemDelivery.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("ApplicationUserID")
+                    b.Property<string>("DeliveryID")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("DeliveryId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("IsDeleted")
@@ -668,9 +665,7 @@ namespace TasleemDelivery.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ApplicationUserID");
-
-                    b.HasIndex("DeliveryId");
+                    b.HasIndex("DeliveryID");
 
                     b.ToTable("Skill");
                 });
@@ -938,17 +933,13 @@ namespace TasleemDelivery.Data.Migrations
 
             modelBuilder.Entity("TasleemDelivery.Models.Skill", b =>
                 {
-                    b.HasOne("TasleemDelivery.Models.ApplicationUser", "ApplicationUser")
-                        .WithMany()
-                        .HasForeignKey("ApplicationUserID")
+                    b.HasOne("TasleemDelivery.Models.Delivery", "Delivery")
+                        .WithMany("Skills")
+                        .HasForeignKey("DeliveryID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TasleemDelivery.Models.Delivery", null)
-                        .WithMany("Skills")
-                        .HasForeignKey("DeliveryId");
-
-                    b.Navigation("ApplicationUser");
+                    b.Navigation("Delivery");
                 });
 
             modelBuilder.Entity("TasleemDelivery.Models.SubAdmin", b =>

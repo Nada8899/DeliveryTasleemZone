@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TasleemDelivery.Data\TasleemDelivery.Data.csproj" />
     <ProjectReference Include="..\TasleemDelivery.Models\TasleemDelivery.Models.csproj" />
     <ProjectReference Include="..\TasleemDelivery.Repository\TasleemDelivery.Repository.csproj" />
