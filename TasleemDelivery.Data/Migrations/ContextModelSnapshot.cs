@@ -433,6 +433,10 @@ namespace TasleemDelivery.Data.Migrations
                     b.Property<DateTime?>("AcceptedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("AddressDetails")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<double>("Budget")
                         .HasColumnType("float");
 
@@ -517,10 +521,6 @@ namespace TasleemDelivery.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");

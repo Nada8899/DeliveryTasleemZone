@@ -70,7 +70,7 @@ namespace TasleemDelivery.Controllers
                 result.IsPass = true;
                 result.Message = "Success";
 
-                return Ok(result);
+                return Ok(locations);
             }
 
             else

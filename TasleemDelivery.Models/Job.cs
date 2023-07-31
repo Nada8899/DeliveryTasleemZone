@@ -16,6 +16,8 @@ namespace TasleemDelivery.Models
         public string Title { get; set; }
         public double Budget { get; set; }
         public string Details { get; set; }
+        public string AddressDetails { get; set; }
+
         public int RequiredPoints { get; set; }
         public DateTime? AcceptedDate { get; set; }
 
