@@ -33,12 +33,14 @@ builder.Services.AddAutoMapper(typeof(DeliveryProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(EduactionLevelProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(LocationProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(JobProfile).Assembly);
+builder.Services.AddAutoMapper(typeof(ProposalProfile).Assembly);
+
 
 
 builder.Services.AddDbContext<Context>(options =>
               options.UseSqlServer(builder.Configuration.GetConnectionString("cs"))
               .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
-              .LogTo(log => Debug.WriteLine(log), LogLevel.Information)
+              .LogTo(log => Debug.WriteLine(log), minimumLevel: LogLevel.Information)
               .EnableSensitiveDataLogging());
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()

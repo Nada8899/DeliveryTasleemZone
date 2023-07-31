@@ -18,9 +18,9 @@ namespace TasleemDelivery.Models
         public string Answer { get; set; }
         public string? Address { get; set; }
         public byte[] ?ProfileImg { get; set; }
-        public double ?Balance { get; set; } //mano
-        [DefaultValue(20)] //mano
-        public int ?Points { get; set; }
+        public double ?Balance { get; set; } 
+       
+        public int Points { get; set; }
         public string ?OverView { get; set; }
         public virtual IEnumerable<Skill>? Skills  { get; set; }
         public double ?YearExperinces { get; set; }

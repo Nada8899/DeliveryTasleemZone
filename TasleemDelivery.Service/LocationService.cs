@@ -22,11 +22,11 @@ namespace TasleemDelivery.Service
         }
 
 
-        public LocationDTO Add (LocationDTO locationDTO)
+        public LocationDTO AddLocation (LocationDTO locationDTO)
         {
 
             Location location = _mapper.Map<Location>(locationDTO);
-            _unitOfWork.LocationRepository.Add(location);
+           _unitOfWork.LocationRepository.Add(location);
             _unitOfWork.SaveChanges();
 
             return locationDTO;

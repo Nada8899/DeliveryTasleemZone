@@ -13,9 +13,9 @@ namespace TasleemDelivery.Profiles
     {
         public LocationProfile() {
 
-            CreateMap<LocationDTO, Location>();
-            CreateMap<Location, LocationDTO>()
+            CreateMap<LocationDTO, Location>()
                 .ForMember(src=>src.Id,opt=>opt.Ignore());
+            CreateMap<Location, LocationDTO>();
 
         }
     }

@@ -78,7 +78,7 @@ namespace TasleemDelivery.Repository.Repositories
         public async Task<T> AddAsync(T entity)
         {
 
-            _context.Set<T>().AddAsync(entity);
+            await _context.Set<T>().AddAsync(entity);
 
             return entity;
         }

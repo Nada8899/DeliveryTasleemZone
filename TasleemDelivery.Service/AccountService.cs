@@ -25,6 +25,7 @@ namespace TasleemDelivery.Service
             //By using Mapper he does it mapping auto because the same name and dataType
             // delivery.Id = registerDTO.Id;
             Delivery delivery = _mapper.Map<Delivery>(registerDTO);
+            delivery.Points = 100;
 
             _unitOfWork.DeliveryRepository.Add(delivery);
             _unitOfWork.SaveChanges();

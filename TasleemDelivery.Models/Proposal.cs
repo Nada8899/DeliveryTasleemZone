@@ -20,7 +20,6 @@ namespace TasleemDelivery.Models
         public string DeliveryId { get; set; }
         public virtual Delivery Delivery { get; set; }
 
-
         [DefaultValue(false)]
         public bool IsHire{ get; set; }
         public  DateTime? HireDate { get; set; }
@@ -29,6 +28,7 @@ namespace TasleemDelivery.Models
         public virtual Job Job { get; set; }
         [DefaultValue(false)]
         public bool IsDeleted { get; set; }
+
 
     }
 }

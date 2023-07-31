@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using TasleemDelivery.DTO;
@@ -23,28 +24,64 @@ namespace TasleemDelivery.Controllers
             this._unitOfWork = _unitOfWork;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> AddLocation(LocationDTO locationDTO)
+        [HttpPost("AddLocation")]
+        public IActionResult AddLocation(LocationDTO locationDTO)
         {
-           
-           LocationDTO l=  locationService.Add(locationDTO);
-            _unitOfWork.CommitChanges();
-            return Ok(new
+            ResultDTO result = new ResultDTO();
+
+            if (ModelState.IsValid)
             {
-                data=l,
-                msg="Added"
-            });
+                LocationDTO location = locationService.AddLocation(locationDTO);
+                _unitOfWork.CommitChanges();
+
+
+                result.Data = location;
+                result.IsPass = true;
+                result.Message = "Success";
+
+                return Ok(result);
+            }
+            else
+            {
+                result.IsPass = false;
+                result.Message = "Failed";
+                result.Data = ModelState;
+
+                return BadRequest(result);
+            }
+           
+        
         }
 
 
         [HttpGet("GetLocation")]
-        public async Task<IActionResult> GetLocation( )
+        public IActionResult GetLocation( )
         {
 
-            List<LocationDTO> l = locationService.GetLocations();
+            ResultDTO result = new ResultDTO();
 
-            return Ok(l);
-                 }
+            if (ModelState.IsValid)
+            {
+                List<LocationDTO> locations = locationService.GetLocations();
+                _unitOfWork.CommitChanges();
+
+
+                result.Data = locations;
+                result.IsPass = true;
+                result.Message = "Success";
+
+                return Ok(result);
+            }
+
+            else
+            {
+                result.IsPass = false;
+                result.Message = "Failed";
+                result.Data = ModelState;
+
+                return BadRequest(result);
+            }
+        }
 
     }
 }

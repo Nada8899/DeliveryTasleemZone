@@ -14,7 +14,7 @@ namespace TasleemDelivery.Models
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        public string Budget { get; set; }
+        public double Budget { get; set; }
         public string Details { get; set; }
         public int RequiredPoints { get; set; }
         public DateTime? AcceptedDate { get; set; }
@@ -25,15 +25,15 @@ namespace TasleemDelivery.Models
 
         [ForeignKey("Delivery")]
         public string? DeliveryId { get; set; }
-        public virtual Delivery Delivery { get; set; }
+        public virtual Delivery? Delivery { get; set; }
 
         [ForeignKey("Client")]
         public string ClientId { get; set; }
         public virtual Client Client { get; set; }
 
-        public virtual IEnumerable<SavedJob> SavedJobs { get; set; }
+        public virtual IEnumerable<SavedJob>? SavedJobs { get; set; }
 
-        public virtual IEnumerable<Review> Reviews { get; set; }
+        public virtual IEnumerable<Review>? Reviews { get; set; }
 
         [DefaultValue(false)]
         public bool IsVerified { get; set; }
