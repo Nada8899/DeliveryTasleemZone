@@ -372,6 +372,32 @@ namespace TasleemDelivery.Controllers
             }
         }
 
-      
+        [HttpGet("GetQuestionByUserName")]
+        public IActionResult GetQuestionByUserName(string userName)
+        {
+            ResultDTO result=new ResultDTO();
+
+            if (ModelState.IsValid) 
+            {
+                string question=_accountService.GetQuestionByUserName(userName);
+
+                result.Data= question;
+                result.Message = "Success";
+                result.IsPass = true;   
+
+                return Ok(result);
+            }
+            else
+            {
+                result.Data = ModelState;
+                result.Message = "Failed";
+                result.IsPass = false;
+
+                return Ok(result);
+            }
+        }
+
+
+
     }
 }

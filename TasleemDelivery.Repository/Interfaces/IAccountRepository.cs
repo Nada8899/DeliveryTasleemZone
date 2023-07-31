@@ -10,11 +10,7 @@ namespace TasleemDelivery.Repository.Interfaces
 {
     public interface IAccountRepository
     {
-        void AddDelivery(Delivery Delivery);
 
-        void AddAdmin(Admin Admin);
-        void AddClient(Client client);
-
-        void AddSubAdmin(SubAdmin SubAdmin);
+        string GetQuestionByUserName(string DeliveryId);
     }
 }

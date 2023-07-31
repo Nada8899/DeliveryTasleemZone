@@ -13,6 +13,7 @@ namespace TasleemDelivery.Models
         public int Id { get; set; }
 
         public string Name { get; set; }
+        public string Description { get; set; }
 
         [DefaultValue(false)]
         public bool IsDeleted { get; set; }

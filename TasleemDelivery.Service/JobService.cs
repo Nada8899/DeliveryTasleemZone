@@ -14,30 +14,37 @@ namespace TasleemDelivery.Service
   
     public class JobService
     {
-         IUnitOfWork _unitOfWork;
+        ProposalService _ProposalService;
+        IUnitOfWork _unitOfWork;
          IMapper _mapper;
 
-        public JobService(IMapper mapper, IUnitOfWork unitOfWork)
+        public JobService(IMapper mapper, IUnitOfWork unitOfWork
+             , ProposalService ProposalService)
         {
+            _ProposalService = ProposalService;
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
 
         public List<JobDTO> GetAllJobs()
         {
-           
 
-            IQueryable<Job> job = _unitOfWork.JobRepository.GetByExpression(e=>e.IsVerified==true);
+            IQueryable<Job> job = _unitOfWork.JobRepository.GetByExpression(e => e.IsVerified == true);
+            List<JobDTO> jobsDTO = _mapper.ProjectTo<JobDTO>(job).ToList();
 
-            List<JobDTO> jobDTO = _mapper.ProjectTo<JobDTO>(job).ToList();
+            foreach(JobDTO jobDTO in jobsDTO)
+            {
+                jobDTO.NumOfProposal=_ProposalService.GetAllProposalsByJobID(jobDTO.Id).Count();
+            }
 
-            return jobDTO;
+            return jobsDTO;
         }
 
         public JobDTO GetJobByID(int JobId)
         {
             Job job=_unitOfWork.JobRepository.GetByID(JobId);
             JobDTO jobDTO = _mapper.Map<JobDTO>(job);
+            jobDTO.NumOfProposal=_ProposalService.GetAllProposalsByJobID(JobId).Count();
 
             return jobDTO;
         }

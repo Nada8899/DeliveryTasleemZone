@@ -61,5 +61,11 @@ namespace TasleemDelivery.Service
 
             return registerDTO;
         }
+        public string GetQuestionByUserName(string userName)
+        {
+            string Question=_unitOfWork.AccountRepository.GetQuestionByUserName(userName);
+
+            return Question;
+        }
     }
 }

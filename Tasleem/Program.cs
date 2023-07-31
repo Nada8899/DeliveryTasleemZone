@@ -34,6 +34,8 @@ builder.Services.AddAutoMapper(typeof(EduactionLevelProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(LocationProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(JobProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(ProposalProfile).Assembly);
+builder.Services.AddAutoMapper(typeof(ClientProfile).Assembly);
+
 
 
 

@@ -14,6 +14,7 @@ namespace TasleemDelivery.DTO
         public string Budget { get; set; }
         public string Details { get; set; }
         public int RequiredPoints { get; set; }
+        public int NumOfProposal { get; set; }
     
     
     }
