@@ -54,8 +54,8 @@ namespace TasleemDelivery.Controllers
         }
 
 
-        [HttpGet("GetLocation")]
-        public IActionResult GetLocation( )
+        [HttpGet("GetLocations")]
+        public IActionResult GetLocations( )
         {
 
             ResultDTO result = new ResultDTO();
@@ -63,7 +63,7 @@ namespace TasleemDelivery.Controllers
             if (ModelState.IsValid)
             {
                 List<LocationDTO> locations = locationService.GetLocations();
-                _unitOfWork.CommitChanges();
+        
 
 
                 result.Data = locations;

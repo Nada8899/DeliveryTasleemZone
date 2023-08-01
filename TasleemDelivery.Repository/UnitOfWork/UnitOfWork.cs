@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,11 +14,12 @@ namespace TasleemDelivery.Repository.UnitOfWork
     public class UnitOfWork:IUnitOfWork
     {
         Context _context;
+        UserManager<ApplicationUser> _userManager;
 
-        public UnitOfWork(Context context)
+        public UnitOfWork(Context context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
-
+            _userManager= userManager;
             BeginTransaction();
         }
 
@@ -69,7 +71,7 @@ namespace TasleemDelivery.Repository.UnitOfWork
         public IGenericRepository<Language, int> LanguageRepository => new GenericRepository<Language, int>(_context);
         public IGenericRepository<Job, int> JobRepository => new GenericRepository<Job, int>(_context);
         public IGenericRepository<SavedJob, int> SavedJobRepository => new GenericRepository<SavedJob, int>(_context);
-        public IAccountRepository AccountRepository => new AccountRepository(_context);
+        public IAccountRepository AccountRepository => new AccountRepository(_context,_userManager);
 
 
     }

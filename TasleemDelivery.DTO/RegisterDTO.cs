@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using TasleemDelivery.Models;
 using TasleemDelivery.SharedValidation.CustomValidations;
 
 namespace TasleemDelivery.DTO
@@ -11,7 +10,7 @@ namespace TasleemDelivery.DTO
         public string ?Id { get; set; }
         public string UserName { get; set; }
         [DataType(DataType.EmailAddress)]
-      //  [UniqueAttribute(typeof(Delivery), "Email")]
+        [UniqueEmailAttribute]
         public string Email { get; set; }
         public string Question { get; set; }
         public string Answer { get; set; }

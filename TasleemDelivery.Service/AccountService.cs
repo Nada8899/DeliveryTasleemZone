@@ -67,5 +67,15 @@ namespace TasleemDelivery.Service
 
             return Question;
         }
+        public async Task<string> ForgetPassword(ForgetPasswordDTO forgetPasswordDTO)
+        {
+
+            string Message = await _unitOfWork.AccountRepository.ForgetPassAsync(forgetPasswordDTO);
+
+            _unitOfWork.SaveChanges();
+
+            return Message;
+        }
+
     }
 }
