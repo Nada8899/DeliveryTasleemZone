@@ -397,7 +397,30 @@ namespace TasleemDelivery.Controllers
             }
         }
 
+        [HttpPut("ForgetPassword")]
+        public async Task<IActionResult> ForgetPasswrd(ForgetPasswordDTO forgetPasswordDTO)
+        {
+            ResultDTO result = new ResultDTO();
 
+            if (ModelState.IsValid)
+            {
+                string Message =await _accountService.ForgetPassword(forgetPasswordDTO);
+                _unitOfWork.CommitChanges();
+               
+                result.Message = Message;
+                result.IsPass = true;
+
+                return Ok(result);
+            }
+            else
+            {
+                result.Data = ModelState;
+                result.Message = "Failed";
+                result.IsPass = false;
+
+                return Ok(result);
+            }
+        }
 
     }
 }

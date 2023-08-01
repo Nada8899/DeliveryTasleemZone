@@ -709,10 +709,8 @@
       "TasleemDelivery.DTO/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
-          "TasleemDelivery.Data": "1.0.0",
           "TasleemDelivery.Models": "1.0.0",
-          "TasleemDelivery.Repository": "1.0.0",
-          "TasleemDelivery.SharedValidation": "1.0.0"
+          "TasleemDelivery.Validation": "1.0.0"
         },
         "runtime": {
           "TasleemDelivery.DTO.dll": {}
@@ -728,6 +726,7 @@
       },
       "TasleemDelivery.Repository/1.0.0": {
         "dependencies": {
+          "TasleemDelivery.DTO": "1.0.0",
           "TasleemDelivery.Data": "1.0.0",
           "TasleemDelivery.Models": "1.0.0"
         },
@@ -735,12 +734,12 @@
           "TasleemDelivery.Repository.dll": {}
         }
       },
-      "TasleemDelivery.SharedValidation/1.0.0": {
+      "TasleemDelivery.Validation/1.0.0": {
         "dependencies": {
           "TasleemDelivery.Data": "1.0.0"
         },
         "runtime": {
-          "TasleemDelivery.SharedValidation.dll": {}
+          "TasleemDelivery.Validation.dll": {}
         }
       }
     }
@@ -1254,7 +1253,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "TasleemDelivery.SharedValidation/1.0.0": {
+    "TasleemDelivery.Validation/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

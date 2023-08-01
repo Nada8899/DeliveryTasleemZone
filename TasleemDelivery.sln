@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasleemDelivery.Profiles", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasleemDelivery.DTO", "TasleemDelivery.DTO\TasleemDelivery.DTO.csproj", "{0798DA04-93A1-4059-8537-3DB2991ED47A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasleemDelivery.SharedValidation", "TasleemDelivery.SharedValidation\TasleemDelivery.SharedValidation.csproj", "{58E16DF7-8830-4DA2-B946-794E41D125C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasleemDelivery.Validation", "TasleemDelivery.SharedValidation\TasleemDelivery.Validation.csproj", "{58E16DF7-8830-4DA2-B946-794E41D125C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -4,7 +4,9 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using TasleemDelivery.DTO;
 using TasleemDelivery.Models;
+
 
 namespace TasleemDelivery.Repository.Interfaces
 {
@@ -12,5 +14,8 @@ namespace TasleemDelivery.Repository.Interfaces
     {
 
         string GetQuestionByUserName(string DeliveryId);
+        Task<string> ForgetPassAsync(ForgetPasswordDTO forgetPasswordDTO);
     }
+
+   
 }

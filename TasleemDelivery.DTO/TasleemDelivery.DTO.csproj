@@ -11,10 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TasleemDelivery.Data\TasleemDelivery.Data.csproj" />
     <ProjectReference Include="..\TasleemDelivery.Models\TasleemDelivery.Models.csproj" />
-    <ProjectReference Include="..\TasleemDelivery.Repository\TasleemDelivery.Repository.csproj" />
-    <ProjectReference Include="..\TasleemDelivery.SharedValidation\TasleemDelivery.SharedValidation.csproj" />
+    <ProjectReference Include="..\TasleemDelivery.SharedValidation\TasleemDelivery.Validation.csproj" />
   </ItemGroup>
 
 </Project>

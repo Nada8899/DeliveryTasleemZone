@@ -1,11 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 using TasleemDelivery.Data;
+using TasleemDelivery.DTO;
 using TasleemDelivery.Models;
 using TasleemDelivery.Repository.Interfaces;
 
@@ -14,14 +9,14 @@ namespace TasleemDelivery.Repository.Repositories
     public class AccountRepository :IAccountRepository
     {
         Context _context;
+        UserManager<ApplicationUser> _userManager;
 
-        public AccountRepository(Context context)
+        public AccountRepository(Context context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
-
-
-        
+  
 
        public string GetQuestionByUserName(string userName)
        {
@@ -86,6 +81,100 @@ namespace TasleemDelivery.Repository.Repositories
             return "لا يوجد حساب بهذا الاسم";
         }
 
+        public async Task<string> ForgetPassAsync(ForgetPasswordDTO forgetPasswordDTO)
+        {
+           ApplicationUser user= _context.Users.FirstOrDefault(usr=>usr.UserName== forgetPasswordDTO.UserName);
+
+            if(user !=null)
+            {
+                IdentityUserRole<string> userRole=_context.UserRoles.FirstOrDefault(usrRole => usrRole.UserId == user.Id);
+                if(userRole !=null)
+                {
+                    IdentityRole<string> role=_context.Roles.FirstOrDefault(r => r.Id == userRole.RoleId);
+
+                    if(role.Name=="Delivery")
+                    {
+                        Delivery delivery=_context.Delivery.FirstOrDefault(d=>d.Id ==user.Id);
+                        if(forgetPasswordDTO.Answer == delivery.Answer)
+                        {
+                            PasswordHasher<ApplicationUser> passwordHasher = new PasswordHasher<ApplicationUser>();
+                            string newPssHash=passwordHasher.HashPassword(user, forgetPasswordDTO.NewPass);
+
+                            user.PasswordHash = newPssHash;
+                            var result=await _userManager.UpdateAsync(user);
+                            return "Password Changed Successfully";
+                        }
+                        else
+                        {
+                            return "Wrong Answer";
+                        }
+                    }
+                    else if (role.Name == "Client")
+                    {
+                        Client client=_context.Client.FirstOrDefault(c => c.Id == user.Id);
+                        if(client !=null)
+                        {
+                            PasswordHasher<ApplicationUser> passwordHasher = new PasswordHasher<ApplicationUser>();
+                           string newPassHash=passwordHasher.HashPassword(user, forgetPasswordDTO.NewPass);
+
+                            user.PasswordHash = newPassHash;
+                            var result=await _userManager.UpdateAsync(user);
+
+                            return "Password Changed Successfully";
+
+                        }
+                        else
+                        {
+                            return "Wrong Answer";
+                        }
+                    }
+                    else if (role.Name == "Admin")
+                    {
+                        Admin admin = _context.Admin.FirstOrDefault(c => c.Id == user.Id);
+                        if (admin != null)
+                        {
+                            PasswordHasher<ApplicationUser> passwordHasher = new PasswordHasher<ApplicationUser>();
+                            string newPassHash = passwordHasher.HashPassword(user, forgetPasswordDTO.NewPass);
+
+                            user.PasswordHash = newPassHash;
+                            var result =await _userManager.UpdateAsync(user);
+
+                            return "Password Changed Successfully";
+
+                        }
+                        else
+                        {
+                            return "Wrong Answer";
+                        }
+                    }
+                    else if(role.Name == "SubAdmin")
+                    {
+                        SubAdmin subAdmin = _context.SubAdmin.FirstOrDefault(c => c.Id == user.Id);
+                        if (subAdmin != null)
+                        {
+                            PasswordHasher<ApplicationUser> passwordHasher = new PasswordHasher<ApplicationUser>();
+                            string newPassHash = passwordHasher.HashPassword(user, forgetPasswordDTO.NewPass);
+
+                            user.PasswordHash = newPassHash;
+                            var result =await _userManager.UpdateAsync(user);
+
+                            return "Password Changed Successfully";
+
+                        }
+                        else
+                        {
+                            return "Wrong Answer";
+                        }
+                    }
+                    else
+                    {
+                        return "There is no exist role with that name";
+                    }
+                }
+                return "User Doesn't have Role";
+            }
+            return "There's No User With This UserName";
+        }
 
     }
 }

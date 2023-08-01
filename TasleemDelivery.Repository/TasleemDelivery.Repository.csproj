@@ -1,13 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\TasleemDelivery.Data\TasleemDelivery.Data.csproj" />
+    <ProjectReference Include="..\TasleemDelivery.DTO\TasleemDelivery.DTO.csproj" />
     <ProjectReference Include="..\TasleemDelivery.Models\TasleemDelivery.Models.csproj" />
   </ItemGroup>
 
