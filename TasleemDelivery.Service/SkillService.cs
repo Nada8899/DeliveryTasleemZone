@@ -32,5 +32,17 @@ namespace TasleemDelivery.Service
             _unitOfWork.SaveChanges();
 
         }
+        public List<string> GetSkillsByDeliveryID(string deliveryID)
+        {
+          List<Skill> skills=_unitOfWork.SkillRepository.GetByExpression(s=>s.DeliveryID==deliveryID).ToList();
+
+            List<string> SkillsNames=new List<string>();
+            foreach (Skill skill in skills) 
+            {
+                SkillsNames.Add(skill.Name);
+            }
+
+            return SkillsNames;
+        }
     }
 }

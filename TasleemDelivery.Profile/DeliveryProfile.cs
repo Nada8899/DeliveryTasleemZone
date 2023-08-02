@@ -14,10 +14,15 @@ namespace TasleemDelivery.Profiles
         public DeliveryProfile() 
         {
             CreateMap<DeliveryProfileDTO, Delivery>()
-                .ForMember(dst=>dst.ProfileImg,opt=>opt.Ignore())
+               .ForMember(dst=>dst.ProfileImg,opt=>opt.Ignore())
                .ForMember(dst => dst.EducationLevel, opt => opt.Ignore())
                .ForMember(dst => dst.Languges, opt => opt.Ignore())
                .ForMember(dst => dst.Skills, opt => opt.Ignore());
+
+            CreateMap< Delivery, GetDeliveryProfileDataDTO>()
+                  .ForMember(dst => dst.Languges, opt => opt.Ignore())
+               .ForMember(dst => dst.Skills, opt => opt.Ignore());
+
         }
     }
 }

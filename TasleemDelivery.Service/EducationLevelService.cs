@@ -26,10 +26,20 @@ namespace TasleemDelivery.Service
             EducationLevel educationLevel=_mapper.Map<EducationLevel>(educationLevelDTO);
             educationLevel.DeliveryID= DeliveryId;
 
-            _unitOfWork.EducationLevelRepository.Add(educationLevel);
-            _unitOfWork.SaveChanges();
+            if (educationLevelDTO.DateFrom > educationLevelDTO.DateTo)
+            {
+                _unitOfWork.EducationLevelRepository.Add(educationLevel);
+                _unitOfWork.SaveChanges();
+            }
 
             return educationLevel;
+        }
+        public EducationLevelDTO GetEducationLevelByDeliveryId(string deliveryId)
+        {
+          EducationLevel educationLevel= _unitOfWork.EducationLevelRepository.GetByExpression(edu => edu.DeliveryID == deliveryId).FirstOrDefault();
+          EducationLevelDTO educationLevelDTO= _mapper.Map<EducationLevelDTO>(educationLevel);
+
+            return educationLevelDTO;
         }
     }
 }

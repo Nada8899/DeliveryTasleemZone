@@ -71,5 +71,18 @@ namespace TasleemDelivery.Service
             return deliveryProfileDTO;
 
         }
+        public GetDeliveryProfileDataDTO GetDeliveryProfileData(string DeliveryId)
+        {
+            Delivery delivery=_unitOfWork.DeliveryRepository.GetByID(DeliveryId,"Skills", "Languges", "EducationLevel");
+
+            GetDeliveryProfileDataDTO deliveryDTO = _mapper.Map<GetDeliveryProfileDataDTO>(delivery);
+
+            deliveryDTO.Skills=_skillService.GetSkillsByDeliveryID(DeliveryId).ToList();
+            deliveryDTO.Languges=_languageService.GetLanguagessByDeliveryID(DeliveryId).ToList();
+            deliveryDTO.EducationLevelDTO = _educationLevelService.GetEducationLevelByDeliveryId(DeliveryId);
+
+
+            return deliveryDTO;
+        }
     }
 }

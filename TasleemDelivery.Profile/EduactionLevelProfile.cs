@@ -13,7 +13,7 @@ namespace TasleemDelivery.Profiles
     {
         public EduactionLevelProfile()
         {
-            CreateMap<EducationLevelDTO, EducationLevel>();
+            CreateMap<EducationLevelDTO, EducationLevel>().ReverseMap();
         }
     }
 }

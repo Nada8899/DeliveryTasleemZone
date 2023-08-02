@@ -42,5 +42,29 @@ namespace TasleemDelivery.Controllers
                 return BadRequest(resultDTO);
             }
         }
+        [HttpGet("GetDeliveryProfileData/{deliveryID}")]
+        public IActionResult AddDeliveryProfile(string deliveryID)
+        {
+            ResultDTO resultDTO = new ResultDTO();
+
+            if (ModelState.IsValid)
+            {
+                GetDeliveryProfileDataDTO DeliveryProfileDTO = _deliveryService.GetDeliveryProfileData(deliveryID);
+
+                resultDTO.Message = "Success";
+                resultDTO.IsPass = true;
+                resultDTO.Data = DeliveryProfileDTO;
+
+                return Ok(resultDTO);
+            }
+            else
+            {
+                resultDTO.Message = "Failed";
+                resultDTO.IsPass = false;
+                resultDTO.Data = ModelState;
+                return BadRequest(resultDTO);
+            }
+        }
+
     }
 }
