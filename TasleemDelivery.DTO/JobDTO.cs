@@ -15,7 +15,9 @@ namespace TasleemDelivery.DTO
         public string Details { get; set; }
         public int RequiredPoints { get; set; }
         public int NumOfProposal { get; set; }
-    
-    
+        public DateTime? AcceptedDate { get; set; }
+        
+
+
     }
 }

@@ -51,5 +51,13 @@ namespace TasleemDelivery.Controllers
             result.IsPass = true;
             return Ok(result);
         }
+        [HttpGet("GetJobsByClientId/{ClientId}")]
+        public IActionResult GetJobsByClientId(string ClientId)
+        {
+            List<JobDTO> jobsDTO = JobService.GetJobsByClientId(ClientId);
+
+            return Ok(jobsDTO);
+        }
+
     }
 }

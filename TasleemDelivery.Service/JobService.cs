@@ -61,5 +61,12 @@ namespace TasleemDelivery.Service
 
             return jobDTO;
         }
+        public List<JobDTO> GetJobsByClientId(string ClientId)
+        {
+            IQueryable<Job> job = _unitOfWork.JobRepository.GetByExpression(e => e.ClientId == ClientId);
+            List<JobDTO> jobsDTO = _mapper.ProjectTo<JobDTO>(job).ToList();
+
+            return jobsDTO;
+        }
     }
 }
