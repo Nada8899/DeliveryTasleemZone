@@ -16,6 +16,9 @@ namespace TasleemDelivery.Profiles
             CreateMap<ClientProfileDTO,Client>()
                 .ForMember(src=>src.ProfileImg,opt=>opt.Ignore())
                 .ForMember(src=>src.Languges,opt=>opt.Ignore());
+
+            CreateMap<Client, GetClientProfileDataDTO>()
+                .ForMember(dst => dst.Languges, opt => opt.Ignore());
         }
     }
 }

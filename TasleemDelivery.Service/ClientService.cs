@@ -48,5 +48,32 @@ namespace TasleemDelivery.Service
             }
             return clientProfileDTO;
         }
+
+
+
+
+
+        public GetClientProfileDataDTO GetClientProfileDataDTO(string clientId)
+        {
+            Client client = _unitOfWork.ClientRepository.GetByID(clientId,"Languges");
+
+            GetClientProfileDataDTO clientDTO = _mapper.Map<GetClientProfileDataDTO>(client);
+
+            clientDTO.Languges = _languageService.GetLanguagessByClientID(clientId).ToList();
+           
+
+
+            return clientDTO;
+        }
+
+
+
+
+
+
+
+
+
+
     }
 }

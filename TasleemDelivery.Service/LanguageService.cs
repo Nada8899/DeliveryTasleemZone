@@ -45,6 +45,22 @@ namespace TasleemDelivery.Service
 
                 return LanguagesNames;
             
+   
+        }
+
+        public List<string> GetLanguagessByClientID(string clientID)
+        {
+            List<Language> languages = _unitOfWork.LanguageRepository.GetByExpression(lan => lan.ApplicationUserID == clientID).ToList();
+
+
+            List<string> LanguagesNames = new List<string>();
+            foreach (Language language in languages)
+            {
+                LanguagesNames.Add(language.Name);
+            }
+
+            return LanguagesNames;
+
         }
     }
 }

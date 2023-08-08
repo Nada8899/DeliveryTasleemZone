@@ -44,5 +44,32 @@ namespace TasleemDelivery.Controllers
             }
 
         }
+
+
+
+        [HttpGet("GetClientProfileData/ClientId")]
+        public IActionResult AddClientProfile(string clientId)
+        {
+            ResultDTO resultDTO = new ResultDTO();
+
+            if (ModelState.IsValid)
+            {
+                GetClientProfileDataDTO ClientProfileDTO = _clientService.GetClientProfileDataDTO(clientId);
+
+                resultDTO.Message = "Success";
+                resultDTO.IsPass = true;
+                resultDTO.Data = ClientProfileDTO;
+
+                return Ok(resultDTO);
+            }
+            else
+            {
+                resultDTO.Message = "Failed";
+                resultDTO.IsPass = false;
+                resultDTO.Data = ModelState;
+                return BadRequest(resultDTO);
+            }
+        }
+
     }
 }
