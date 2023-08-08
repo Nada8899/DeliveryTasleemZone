@@ -26,12 +26,10 @@ F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Service\
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.DTO.dll
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Models.dll
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Repository.dll
-F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.SharedValidation.dll
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.DTO.pdb
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Repository.pdb
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Data.pdb
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Models.pdb
-F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.SharedValidation.pdb
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Service\obj\Debug\net7.0\TasleemDelivery.Service.csproj.AssemblyReference.cache
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Service\obj\Debug\net7.0\TasleemDelivery.Service.GeneratedMSBuildEditorConfig.editorconfig
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Service\obj\Debug\net7.0\TasleemDelivery.Service.AssemblyInfoInputs.cache
@@ -44,3 +42,5 @@ F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Service\
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Service\obj\Debug\net7.0\ref\TasleemDelivery.Service.dll
 D:\Freelance-Jobs\New API\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Validation.dll
 D:\Freelance-Jobs\New API\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Validation.pdb
+F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Validation.dll
+F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Validation.pdb
