@@ -31,7 +31,6 @@ builder.Host.ConfigureContainer<ContainerBuilder>(opt =>
 builder.Services.AddAutoMapper(typeof(RegisterProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(DeliveryProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(EduactionLevelProfile).Assembly);
-builder.Services.AddAutoMapper(typeof(LocationProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(JobProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(ProposalProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(ClientProfile).Assembly);

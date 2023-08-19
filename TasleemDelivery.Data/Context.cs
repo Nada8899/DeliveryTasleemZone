@@ -29,7 +29,6 @@ namespace TasleemDelivery.Data
         public DbSet<Client> Client { get; set; }
 
         public DbSet<Language> Languge { get; set; }
-        public DbSet<Location> Location { get; set; }
         public DbSet<Proposal> Proposal { get; set; }
         public DbSet<Review> Review { get; set; }
         public DbSet<SavedJob> SavedJob { get; set; }

@@ -20,11 +20,8 @@ namespace TasleemDelivery.Models
 
         public int RequiredPoints { get; set; }
         public DateTime? AcceptedDate { get; set; }
-
-        [ForeignKey("Location")]
-        public int LocationId { get; set; }
-        public virtual Location Location { get; set; }
-
+        public string CountryName { get; set; }
+        public string CityName { get; set; }
         [ForeignKey("Delivery")]
         public string? DeliveryId { get; set; }
         public virtual Delivery? Delivery { get; set; }

@@ -24,7 +24,6 @@ namespace TasleemDelivery.Config
             builder.RegisterAssemblyTypes(typeof(SkillService).Assembly).InstancePerLifetimeScope();
             builder.RegisterAssemblyTypes(typeof(LanguageService).Assembly).InstancePerLifetimeScope();
             builder.RegisterAssemblyTypes(typeof(JobService).Assembly).InstancePerLifetimeScope();
-            builder.RegisterAssemblyTypes(typeof(LocationService).Assembly).InstancePerLifetimeScope();
             builder.RegisterAssemblyTypes(typeof(ProposalService).Assembly).InstancePerLifetimeScope();
 
 

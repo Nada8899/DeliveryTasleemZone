@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace TasleemDelivery.Service
         public List<JobDTO> GetAllJobs()
         {
 
-            IQueryable<Job> job = _unitOfWork.JobRepository.GetByExpression(e => e.IsVerified == true);
+            IQueryable<Job> job = _unitOfWork.JobRepository.GetByExpression(e => e.IsVerified == false); //will be changed
             List<JobDTO> jobsDTO = _mapper.ProjectTo<JobDTO>(job).ToList();
 
             foreach(JobDTO jobDTO in jobsDTO)
@@ -65,6 +66,40 @@ namespace TasleemDelivery.Service
         {
             IQueryable<Job> job = _unitOfWork.JobRepository.GetByExpression(e => e.ClientId == ClientId);
             List<JobDTO> jobsDTO = _mapper.ProjectTo<JobDTO>(job).ToList();
+
+            return jobsDTO;
+        }
+        public List<JobDTO> GetJobsByCountryName(string CountryName)
+        {
+            IQueryable<Job> job = _unitOfWork.JobRepository.GetByExpression(e => e.CountryName == CountryName && e.IsVerified == false);
+            List<JobDTO> jobsDTO = _mapper.ProjectTo<JobDTO>(job).ToList();
+            if(CountryName=="كل الدول")
+            {
+                jobsDTO= GetAllJobs();
+                return jobsDTO;
+            }
+
+            return jobsDTO;
+        }
+
+        public List<JobDTO> GetJobsByCountryCityName(string CountryName,string CityName)
+        {
+            IQueryable<Job> job = _unitOfWork.JobRepository.GetByExpression(e => e.CountryName == CountryName && e.CityName == CityName && e.IsVerified == false);
+            List<JobDTO> jobsDTO = _mapper.ProjectTo<JobDTO>(job).ToList();
+            
+            if(CityName == "كل المدن")
+            {
+                jobsDTO = GetJobsByCountryName(CountryName);
+                return jobsDTO;
+            }
+
+            return jobsDTO;
+        }
+        public List<JobDTO> GetJobsByRequiredPoints(int requiredPoints)
+        {
+            IQueryable<Job> job = _unitOfWork.JobRepository.GetByExpression(e => e.RequiredPoints <= requiredPoints && e.IsVerified == false);
+            List<JobDTO> jobsDTO = _mapper.ProjectTo<JobDTO>(job).ToList();
+
 
             return jobsDTO;
         }

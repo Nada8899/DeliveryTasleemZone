@@ -440,9 +440,17 @@ namespace TasleemDelivery.Data.Migrations
                     b.Property<double>("Budget")
                         .HasColumnType("float");
 
+                    b.Property<string>("CityName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ClientId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CountryName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DeliveryId")
                         .HasColumnType("nvarchar(450)");
@@ -457,9 +465,6 @@ namespace TasleemDelivery.Data.Migrations
                     b.Property<bool>("IsVerified")
                         .HasColumnType("bit");
 
-                    b.Property<int>("LocationId")
-                        .HasColumnType("int");
-
                     b.Property<int>("RequiredPoints")
                         .HasColumnType("int");
 
@@ -472,8 +477,6 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasIndex("ClientId");
 
                     b.HasIndex("DeliveryId");
-
-                    b.HasIndex("LocationId");
 
                     b.ToTable("Job");
                 });
@@ -512,26 +515,6 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasIndex("DeliveryId");
 
                     b.ToTable("Languge");
-                });
-
-            modelBuilder.Entity("TasleemDelivery.Models.Location", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Location");
                 });
 
             modelBuilder.Entity("TasleemDelivery.Models.Proposal", b =>
@@ -838,17 +821,9 @@ namespace TasleemDelivery.Data.Migrations
                         .WithMany("PreviousJobs")
                         .HasForeignKey("DeliveryId");
 
-                    b.HasOne("TasleemDelivery.Models.Location", "Location")
-                        .WithMany("Jobs")
-                        .HasForeignKey("LocationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Client");
 
                     b.Navigation("Delivery");
-
-                    b.Navigation("Location");
                 });
 
             modelBuilder.Entity("TasleemDelivery.Models.Language", b =>
@@ -985,11 +960,6 @@ namespace TasleemDelivery.Data.Migrations
                     b.Navigation("Reviews");
 
                     b.Navigation("SavedJobs");
-                });
-
-            modelBuilder.Entity("TasleemDelivery.Models.Location", b =>
-                {
-                    b.Navigation("Jobs");
                 });
 #pragma warning restore 612, 618
         }

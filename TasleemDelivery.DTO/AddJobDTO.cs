@@ -14,8 +14,8 @@ namespace TasleemDelivery.DTO
         public string AddressDetails { get; set; }
 
         public int RequiredPoints { get; set; }
-        public int LocationId { get; set; }
-
+        public string CountryName { get; set; }
+        public string CityName { get; set; }
         public string ClientId { get; set; }
     }
 }

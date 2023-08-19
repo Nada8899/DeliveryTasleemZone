@@ -23,7 +23,6 @@ namespace TasleemDelivery.Repository.UnitOfWork
         IGenericRepository<Job, int> JobRepository { get; }
         IGenericRepository<SavedJob, int> SavedJobRepository { get; }
         IGenericRepository<Language, int> LanguageRepository { get; }
-        IGenericRepository<Location, int> LocationRepository { get; }
         IGenericRepository<Proposal, int> ProposalRepository { get; }
         IGenericRepository<Review, int> ReviewRepository { get; }
         IAccountRepository AccountRepository { get; }

@@ -58,6 +58,28 @@ namespace TasleemDelivery.Controllers
 
             return Ok(jobsDTO);
         }
+        [HttpGet("GetJobsByCountryName/{CountryName}")]
+        public IActionResult GetJobsByCountryName(string CountryName)
+        {
+            List<JobDTO> jobsDTO = JobService.GetJobsByCountryName(CountryName);
+
+            return Ok(jobsDTO);
+        }
+        [HttpGet("GetJobsByCountryName/{CountryName}/{CityName}")]
+        public IActionResult GetJobsByCountryName(string CountryName,string CityName)
+        {
+            List<JobDTO> jobsDTO = JobService.GetJobsByCountryCityName(CountryName,CityName);
+
+            return Ok(jobsDTO);
+        }
+
+        [HttpGet("GetJobsByRequiredPonits/{requiredPoints}")]
+        public IActionResult GetJobsByRequiredPonits(int requiredPoints)
+        {
+            List<JobDTO> jobsDTO = JobService.GetJobsByRequiredPoints(requiredPoints);
+
+            return Ok(jobsDTO);
+        }
 
     }
 }
