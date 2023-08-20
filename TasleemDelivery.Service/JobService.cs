@@ -95,13 +95,6 @@ namespace TasleemDelivery.Service
 
             return jobsDTO;
         }
-        public List<JobDTO> GetJobsByRequiredPoints(int requiredPoints)
-        {
-            IQueryable<Job> job = _unitOfWork.JobRepository.GetByExpression(e => e.RequiredPoints <= requiredPoints && e.IsVerified == false);
-            List<JobDTO> jobsDTO = _mapper.ProjectTo<JobDTO>(job).ToList();
-
-
-            return jobsDTO;
-        }
+     
     }
 }

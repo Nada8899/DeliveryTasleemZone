@@ -73,13 +73,6 @@ namespace TasleemDelivery.Controllers
             return Ok(jobsDTO);
         }
 
-        [HttpGet("GetJobsByRequiredPonits/{requiredPoints}")]
-        public IActionResult GetJobsByRequiredPonits(int requiredPoints)
-        {
-            List<JobDTO> jobsDTO = JobService.GetJobsByRequiredPoints(requiredPoints);
-
-            return Ok(jobsDTO);
-        }
 
     }
 }

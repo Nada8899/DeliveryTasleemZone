@@ -15,7 +15,7 @@ namespace TasleemDelivery.DTO
         public byte [] ProfileImg { get; set; }
         public string OverView { get; set; }
         public double YearExperinces { get; set; }
-
+        public int Points { get; set; }
         public virtual EducationLevelDTO EducationLevelDTO { get; set; }
         public virtual IEnumerable<string> Skills { get; set; }
         public virtual IEnumerable<string> Languges { get; set; }
