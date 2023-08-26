@@ -29,7 +29,7 @@ namespace TasleemDelivery.Controllers
                _unitOfWork.CommitChanges();
 
                 result.Data = addProposalDTO;
-                if(proposalResult == "Sorry, the proposal price is greater than job budget OR job Required Points is greater than your points")
+                if(proposalResult == "عدد التقديمات أكبر من 10 أو عدد النقاط المطلوبة للتوصيل أكبر من عدد النقاط المتبقية لك")
                 {
                     result.Message = proposalResult;
                     result.IsPass = false;

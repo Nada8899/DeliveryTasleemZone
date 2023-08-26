@@ -13,8 +13,7 @@ namespace TasleemDelivery.Models
     {
         public int Id { get; set; }
 
-        public string CoverLetter { get; set; }
-        public double ProposalPrice { get; set; }
+       
         public DateTime ProposalDate { get; set; }
         [ForeignKey("Delivery")]
         public string DeliveryId { get; set; }

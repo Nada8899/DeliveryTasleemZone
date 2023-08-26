@@ -11,8 +11,7 @@ namespace TasleemDelivery.DTO
 {
     public class AddProposalDTO
     {
-        public string CoverLetter { get; set; }
-        public double ProposalPrice { get; set; }
+        
         public DateTime ?ProposalDate { get; set; }
      
         public string DeliveryId { get; set; }

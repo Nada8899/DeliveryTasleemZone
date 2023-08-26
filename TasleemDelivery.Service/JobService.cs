@@ -43,8 +43,8 @@ namespace TasleemDelivery.Service
 
         public JobDTO GetJobByID(int JobId)
         {
-            Job job=_unitOfWork.JobRepository.GetByID(JobId);
-            JobDTO jobDTO = _mapper.Map<JobDTO>(job);
+            
+            JobDTO jobDTO= GetAllJobs().FirstOrDefault(job => job.Id == JobId);
             jobDTO.NumOfProposal=_ProposalService.GetAllProposalsByJobID(JobId).Count();
 
             return jobDTO;

@@ -24,7 +24,7 @@ namespace TasleemDelivery.Service
         {
             Job job=_unitOfWork.JobRepository.GetByID(addProposalDTO.JobID);
             Delivery delivery =_unitOfWork.DeliveryRepository.GetByID(addProposalDTO.DeliveryId);
-            if (addProposalDTO != null &&  addProposalDTO.ProposalPrice <=  job.Budget && delivery.Points >= job.RequiredPoints)
+            if (addProposalDTO != null && delivery.Points >= job.RequiredPoints && GetAllProposalsByJobID(job.Id).Count<10)
             {
 
                 Proposal proposal = _mapper.Map<Proposal>(addProposalDTO);
@@ -33,11 +33,11 @@ namespace TasleemDelivery.Service
                     _unitOfWork.ProposalRepository.Add(proposal);
                     _unitOfWork.SaveChanges();
 
-                return "Added Successfully";
+                return "تم التقديم بنجاح";
             }
            
 
-            return "Sorry, the proposal price is greater than job budget OR job Required Points is greater than your points";
+            return "عدد التقديمات أكبر من 10 أو عدد النقاط المطلوبة للتوصيل أكبر من عدد النقاط المتبقية لك";
         }
 
         public List< AddProposalDTO> GetAllProposalsByJobID(int jobID)

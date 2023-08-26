@@ -16,6 +16,8 @@ namespace TasleemDelivery.DTO
         public string Id { get; set; }
         public string FullName { get; set; }      
         public string Address { get; set; }
+        public string PhoneNum { get; set; }
+
         public IFormFile ProfileImg { get; set; }      
         public string OverView { get; set; }
         public List<string> Languges { get; set; }
