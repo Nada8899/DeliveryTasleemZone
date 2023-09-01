@@ -13,7 +13,7 @@ namespace TasleemDelivery.Controllers
     {
         ProposalService _proposalService;
         IUnitOfWork _unitOfWork;
-        public ProposalController(ProposalService proposalService, IUnitOfWork unitOfWork) 
+        public ProposalController(ProposalService proposalService, IUnitOfWork unitOfWork)
         {
             _proposalService = proposalService;
             _unitOfWork = unitOfWork;
@@ -22,19 +22,19 @@ namespace TasleemDelivery.Controllers
         [HttpPost("AddProposal")]
         public IActionResult AddProposal(AddProposalDTO addProposalDTO)
         {
-            ResultDTO result = new ResultDTO(); 
-            if(ModelState.IsValid) 
+            ResultDTO result = new ResultDTO();
+            if (ModelState.IsValid)
             {
-              string proposalResult= _proposalService.AddProposal(addProposalDTO);
-               _unitOfWork.CommitChanges();
+                string proposalResult = _proposalService.AddProposal(addProposalDTO);
+                _unitOfWork.CommitChanges();
 
                 result.Data = addProposalDTO;
-                if(proposalResult == "عدد التقديمات أكبر من 10 أو عدد النقاط المطلوبة للتوصيل أكبر من عدد النقاط المتبقية لك")
+                if (proposalResult == "عدد التقديمات أكبر من 10 أو عدد النقاط المطلوبة للتوصيل أكبر من عدد النقاط المتبقية لك")
                 {
                     result.Message = proposalResult;
                     result.IsPass = false;
                 }
-                else 
+                else
                 {
                     result.Message = "Success";
                     result.IsPass = true;
@@ -61,12 +61,12 @@ namespace TasleemDelivery.Controllers
 
                 result.Message = "Success";
                 result.IsPass = true;
-                result.Data= AllProposals;
+                result.Data = AllProposals;
 
                 return Ok(result);
 
             }
-            else 
+            else
             {
                 result.Data = ModelState;
                 result.Message = "Failed";
@@ -77,6 +77,33 @@ namespace TasleemDelivery.Controllers
 
         }
 
+
+        [HttpPost("checkDeliveryAvilableinJobPost")]
+        public IActionResult checkDeliveryAvilableinJobPost(checkDeliveryAvilableinJobPostDTO dTO)
+        {
+            ResultDTO result = new ResultDTO();
+
+            if (ModelState.IsValid)
+            {
+               Boolean isFound = _proposalService.checkDeliveryAvilableinJobPost(dTO);
+
+                result.Message = "Success";
+                result.IsPass = true;
+                result.Data = isFound;
+
+                return Ok(result);
+
+            }
+            else
+            {
+                result.Data = ModelState;
+                result.Message = "Failed";
+                result.IsPass = false;
+
+                return BadRequest(result);
+            }
+
+        }
 
     }
 }

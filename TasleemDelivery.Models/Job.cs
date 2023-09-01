@@ -10,6 +10,12 @@ using TasleemDelivery.Models.InterFaces;
 
 namespace TasleemDelivery.Models
 {
+   public enum IsVerified
+    {
+        waiting,
+        denied,
+        verified
+    }
     public class Job:IBaseModel<int>
     {
         public int Id { get; set; }
@@ -34,8 +40,9 @@ namespace TasleemDelivery.Models
 
         public virtual IEnumerable<Review>? Reviews { get; set; }
 
-        [DefaultValue(false)]
-        public bool IsVerified { get; set; }
+        [DefaultValue(0)]
+        public IsVerified IsVerified { get; set; }
+
         [DefaultValue(false)]
         public bool IsDeleted { get; set; }
     }

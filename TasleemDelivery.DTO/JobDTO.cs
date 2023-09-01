@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,9 @@ namespace TasleemDelivery.DTO
         public string CityName { get; set; }
         public  Client Client { get; set; }
         public DateTime? AcceptedDate { get; set; }
-        
+        [DefaultValue(0)]
+        public IsVerified IsVerified { get; set; }
+
 
 
     }
