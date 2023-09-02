@@ -13,6 +13,7 @@
           "Autofac.Extensions.DependencyInjection": "8.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.9",
           "Microsoft.EntityFrameworkCore.Design": "7.0.9",
+          "PayPal": "1.9.1",
           "Swashbuckle.AspNetCore": "6.5.0",
           "TasleemDelivery.DTO": "1.0.0",
           "TasleemDelivery.Data": "1.0.0",
@@ -536,6 +537,25 @@
           }
         }
       },
+      "Newtonsoft.Json/7.0.1": {
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.1.18622"
+          }
+        }
+      },
+      "PayPal/1.9.1": {
+        "dependencies": {
+          "Newtonsoft.Json": "7.0.1"
+        },
+        "runtime": {
+          "lib/net451/PayPal.dll": {
+            "assemblyVersion": "1.9.1.0",
+            "fileVersion": "1.9.1.0"
+          }
+        }
+      },
       "Swashbuckle.AspNetCore/6.5.0": {
         "dependencies": {
           "Microsoft.Extensions.ApiDescription.Server": "6.0.5",
@@ -804,6 +824,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.20",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.9",
+          "PayPal": "1.9.1",
           "TasleemDelivery.Models": "1.0.0"
         },
         "runtime": {
@@ -813,6 +834,7 @@
       "TasleemDelivery.DTO/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
+          "PayPal": "1.9.1",
           "TasleemDelivery.Models": "1.0.0",
           "TasleemDelivery.Validation": "1.0.0"
         },
@@ -822,7 +844,8 @@
       },
       "TasleemDelivery.Models/1.0.0": {
         "dependencies": {
-          "Microsoft.Extensions.Identity.Stores": "7.0.9"
+          "Microsoft.Extensions.Identity.Stores": "7.0.9",
+          "PayPal": "1.9.1"
         },
         "runtime": {
           "TasleemDelivery.Models.dll": {}
@@ -833,6 +856,7 @@
           "AutoMapper": "12.0.1",
           "AutoMapper.Extensions.ExpressionMapping": "6.0.4",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+          "PayPal": "1.9.1",
           "TasleemDelivery.DTO": "1.0.0",
           "TasleemDelivery.Models": "1.0.0"
         },
@@ -842,6 +866,7 @@
       },
       "TasleemDelivery.Repository/1.0.0": {
         "dependencies": {
+          "PayPal": "1.9.1",
           "TasleemDelivery.DTO": "1.0.0",
           "TasleemDelivery.Data": "1.0.0",
           "TasleemDelivery.Models": "1.0.0"
@@ -853,6 +878,7 @@
       "TasleemDelivery.Service/1.0.0": {
         "dependencies": {
           "AutoMapper": "12.0.1",
+          "PayPal": "1.9.1",
           "TasleemDelivery.DTO": "1.0.0",
           "TasleemDelivery.Repository": "1.0.0"
         },
@@ -862,6 +888,7 @@
       },
       "TasleemDelivery.Validation/1.0.0": {
         "dependencies": {
+          "PayPal": "1.9.1",
           "TasleemDelivery.Data": "1.0.0"
         },
         "runtime": {
@@ -1232,6 +1259,20 @@
       "sha512": "sha512-KZYeKBET/2Z0gY1WlTAK7+RHTl7GSbtvTLDXEZZojUdAPqpQNDL6tHv7VUpqfX5VEOh+uRGKaZXkuD253nEOBQ==",
       "path": "mono.texttemplating/2.2.1",
       "hashPath": "mono.texttemplating.2.2.1.nupkg.sha512"
+    },
+    "Newtonsoft.Json/7.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-q3V4KLetMLnt1gpAVWgtXnHjKs0UG/RalBc29u2ZKxd5t5Ze4JBL5WiiYIklJyK/5CRiIiNwigVQUo0FgbsuWA==",
+      "path": "newtonsoft.json/7.0.1",
+      "hashPath": "newtonsoft.json.7.0.1.nupkg.sha512"
+    },
+    "PayPal/1.9.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-b3vq6Lc9CwSooCX2tsZ02zb7E/K/cA6EILCoMynue+ZeVuitJNqt0YwxPnp7uN0Pccob02oDlpAjRLH+GRCRxA==",
+      "path": "paypal/1.9.1",
+      "hashPath": "paypal.1.9.1.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.5.0": {
       "type": "package",

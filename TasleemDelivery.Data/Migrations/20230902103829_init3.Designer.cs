@@ -12,8 +12,8 @@ using TasleemDelivery.Data;
 namespace TasleemDelivery.Data.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230825202206_init6")]
-    partial class init6
+    [Migration("20230902103829_init3")]
+    partial class init3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -345,6 +345,38 @@ namespace TasleemDelivery.Data.Migrations
                     b.ToTable("Client");
                 });
 
+            modelBuilder.Entity("TasleemDelivery.Models.ComplaintsِnAndSuggestions", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ApplicationUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Msg")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.ToTable("ComplaintsِnAndSuggestions");
+                });
+
             modelBuilder.Entity("TasleemDelivery.Models.Delivery", b =>
                 {
                     b.Property<string>("Id")
@@ -468,8 +500,8 @@ namespace TasleemDelivery.Data.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsVerified")
-                        .HasColumnType("bit");
+                    b.Property<int>("IsVerified")
+                        .HasColumnType("int");
 
                     b.Property<int>("RequiredPoints")
                         .HasColumnType("int");
@@ -780,6 +812,17 @@ namespace TasleemDelivery.Data.Migrations
                     b.Navigation("ApplicationUser");
                 });
 
+            modelBuilder.Entity("TasleemDelivery.Models.ComplaintsِnAndSuggestions", b =>
+                {
+                    b.HasOne("TasleemDelivery.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany("Complaints")
+                        .HasForeignKey("ApplicationUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
+                });
+
             modelBuilder.Entity("TasleemDelivery.Models.Delivery", b =>
                 {
                     b.HasOne("TasleemDelivery.Models.EducationLevel", "EducationLevel")
@@ -929,6 +972,8 @@ namespace TasleemDelivery.Data.Migrations
 
             modelBuilder.Entity("TasleemDelivery.Models.ApplicationUser", b =>
                 {
+                    b.Navigation("Complaints");
+
                     b.Navigation("Languges");
                 });
 

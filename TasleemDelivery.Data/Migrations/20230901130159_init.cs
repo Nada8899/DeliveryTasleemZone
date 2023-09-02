@@ -53,20 +53,6 @@ namespace TasleemDelivery.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Location",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Location", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -206,6 +192,7 @@ namespace TasleemDelivery.Data.Migrations
                     Question = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Answer = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNum = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ProfileImg = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
                     OverView = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
@@ -216,6 +203,27 @@ namespace TasleemDelivery.Data.Migrations
                     table.ForeignKey(
                         name: "FK_Client_AspNetUsers_Id",
                         column: x => x.Id,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ComplaintsِnAndSuggestions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Msg = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ComplaintsِnAndSuggestions", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ComplaintsِnAndSuggestions_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.NoAction);
@@ -334,10 +342,11 @@ namespace TasleemDelivery.Data.Migrations
                     AddressDetails = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     RequiredPoints = table.Column<int>(type: "int", nullable: false),
                     AcceptedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    LocationId = table.Column<int>(type: "int", nullable: false),
+                    CountryName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CityName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DeliveryId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     ClientId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    IsVerified = table.Column<bool>(type: "bit", nullable: false),
+                    IsVerified = table.Column<int>(type: "int", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -354,12 +363,6 @@ namespace TasleemDelivery.Data.Migrations
                         column: x => x.DeliveryId,
                         principalTable: "Delivery",
                         principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Job_Location_LocationId",
-                        column: x => x.LocationId,
-                        principalTable: "Location",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -422,8 +425,6 @@ namespace TasleemDelivery.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CoverLetter = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ProposalPrice = table.Column<double>(type: "float", nullable: false),
                     ProposalDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DeliveryId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     IsHire = table.Column<bool>(type: "bit", nullable: false),
@@ -561,6 +562,11 @@ namespace TasleemDelivery.Data.Migrations
                 column: "DeliveryId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ComplaintsِnAndSuggestions_ApplicationUserId",
+                table: "ComplaintsِnAndSuggestions",
+                column: "ApplicationUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Delivery_EducationLevelID",
                 table: "Delivery",
                 column: "EducationLevelID");
@@ -579,11 +585,6 @@ namespace TasleemDelivery.Data.Migrations
                 name: "IX_Job_DeliveryId",
                 table: "Job",
                 column: "DeliveryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Job_LocationId",
-                table: "Job",
-                column: "LocationId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Languge_ApplicationUserID",
@@ -689,6 +690,9 @@ namespace TasleemDelivery.Data.Migrations
                 name: "Chat");
 
             migrationBuilder.DropTable(
+                name: "ComplaintsِnAndSuggestions");
+
+            migrationBuilder.DropTable(
                 name: "Languge");
 
             migrationBuilder.DropTable(
@@ -714,9 +718,6 @@ namespace TasleemDelivery.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Client");
-
-            migrationBuilder.DropTable(
-                name: "Location");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

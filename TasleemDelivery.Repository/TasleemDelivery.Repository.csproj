@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="PayPal" Version="1.9.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TasleemDelivery.Data\TasleemDelivery.Data.csproj" />
     <ProjectReference Include="..\TasleemDelivery.DTO\TasleemDelivery.DTO.csproj" />
     <ProjectReference Include="..\TasleemDelivery.Models\TasleemDelivery.Models.csproj" />

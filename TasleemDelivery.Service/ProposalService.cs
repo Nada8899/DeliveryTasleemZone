@@ -27,7 +27,7 @@ namespace TasleemDelivery.Service
             Delivery delivery = _unitOfWork.DeliveryRepository.GetByID(addProposalDTO.DeliveryId);
             if (addProposalDTO != null && delivery.Points >= job.RequiredPoints && GetAllProposalsByJobID(job.Id).Count < 10)
             {
-                delivery.Points=delivery.Points-job.RequiredPoints;
+                delivery.Points = delivery.Points - job.RequiredPoints;
                 _unitOfWork.DeliveryRepository.Update(delivery);
 
                 Proposal proposal = _mapper.Map<Proposal>(addProposalDTO);
@@ -43,17 +43,19 @@ namespace TasleemDelivery.Service
             return "عدد التقديمات أكبر من 10 أو عدد النقاط المطلوبة للتوصيل أكبر من عدد النقاط المتبقية لك";
         }
 
-        public List<AddProposalDTO> GetAllProposalsByJobID(int jobID)
+        public List<GetProposalDTO> GetAllProposalsByJobID(int jobID)
         {
 
             IQueryable<Proposal> props = _unitOfWork.ProposalRepository.GetByExpression(prop => prop.JobID == jobID);
 
-            List<AddProposalDTO> proposals = _mapper.ProjectTo<AddProposalDTO>(props).ToList();
+            List<GetProposalDTO> proposals = _mapper.ProjectTo<GetProposalDTO>(props).ToList();
 
 
 
             return proposals;
         }
+
+
         public Boolean checkDeliveryAvilableinJobPost(checkDeliveryAvilableinJobPostDTO dTO)
         {
             Boolean isFound;
@@ -62,7 +64,8 @@ namespace TasleemDelivery.Service
             {
                 isFound = false;
 
-            }else
+            }
+            else
             {
                 isFound = true;
             }

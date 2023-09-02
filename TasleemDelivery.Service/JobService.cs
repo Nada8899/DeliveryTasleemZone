@@ -12,12 +12,12 @@ using TasleemDelivery.Repository.UnitOfWork;
 
 namespace TasleemDelivery.Service
 {
-  
+
     public class JobService
     {
         ProposalService _ProposalService;
         IUnitOfWork _unitOfWork;
-         IMapper _mapper;
+        IMapper _mapper;
 
         public JobService(IMapper mapper, IUnitOfWork unitOfWork
              , ProposalService ProposalService)
@@ -30,28 +30,57 @@ namespace TasleemDelivery.Service
         public List<JobDTO> GetAllJobs()
         {
 
-            IQueryable<Job> job = _unitOfWork.JobRepository.GetByExpression(e => e.IsVerified == IsVerified.waiting); //will be changed
+            IQueryable<Job> job = _unitOfWork.JobRepository.GetAll(); 
             List<JobDTO> jobsDTO = _mapper.ProjectTo<JobDTO>(job).ToList();
 
-            foreach(JobDTO jobDTO in jobsDTO)
+            foreach (JobDTO jobDTO in jobsDTO)
             {
-                jobDTO.NumOfProposal=_ProposalService.GetAllProposalsByJobID(jobDTO.Id).Count();
+                jobDTO.NumOfProposal = _ProposalService.GetAllProposalsByJobID(jobDTO.Id).Count();
             }
 
             return jobsDTO;
         }
 
+        public List<JobDTO> GetAllJobsWaiting()
+        {
+
+            IQueryable<Job> job = _unitOfWork.JobRepository.GetByExpression(e => e.IsVerified == IsVerified.waiting); 
+            List<JobDTO> jobsDTO = _mapper.ProjectTo<JobDTO>(job).ToList();
+
+            foreach (JobDTO jobDTO in jobsDTO)
+            {
+                jobDTO.NumOfProposal = _ProposalService.GetAllProposalsByJobID(jobDTO.Id).Count();
+            }
+
+            return jobsDTO;
+        }
+        public List<JobDTO> GetAllJobsConfirmed()
+        {
+
+            IQueryable<Job> job = _unitOfWork.JobRepository.GetByExpression(e => e.IsVerified == IsVerified.verified); 
+            List<JobDTO> jobsDTO = _mapper.ProjectTo<JobDTO>(job).ToList();
+
+            foreach (JobDTO jobDTO in jobsDTO)
+            {
+                jobDTO.NumOfProposal = _ProposalService.GetAllProposalsByJobID(jobDTO.Id).Count();
+            }
+
+            return jobsDTO;
+        }
+
+
         public JobDTO GetJobByID(int JobId)
         {
-            
-            JobDTO jobDTO= GetAllJobs().FirstOrDefault(job => job.Id == JobId);
-            jobDTO.NumOfProposal=_ProposalService.GetAllProposalsByJobID(JobId).Count();
+
+            JobDTO jobDTO = GetAllJobs().FirstOrDefault(job => job.Id == JobId);
+            jobDTO.NumOfProposal = _ProposalService.GetAllProposalsByJobID(JobId).Count();
 
             return jobDTO;
         }
 
 
-        public AddJobDTO AddJob(AddJobDTO jobDTO) {
+        public AddJobDTO AddJob(AddJobDTO jobDTO)
+        {
 
 
 
@@ -71,23 +100,23 @@ namespace TasleemDelivery.Service
         }
         public List<JobDTO> GetJobsByCountryName(string CountryName)
         {
-            IQueryable<Job> job = _unitOfWork.JobRepository.GetByExpression(e => e.CountryName == CountryName &&  e.IsVerified == IsVerified.waiting);
+            IQueryable<Job> job = _unitOfWork.JobRepository.GetByExpression(e => e.CountryName == CountryName && e.IsVerified == IsVerified.verified);
             List<JobDTO> jobsDTO = _mapper.ProjectTo<JobDTO>(job).ToList();
-            if(CountryName=="كل الدول")
+            if (CountryName == "كل الدول")
             {
-                jobsDTO= GetAllJobs();
+                jobsDTO = GetAllJobsConfirmed();
                 return jobsDTO;
             }
 
             return jobsDTO;
         }
 
-        public List<JobDTO> GetJobsByCountryCityName(string CountryName,string CityName)
+        public List<JobDTO> GetJobsByCountryCityName(string CountryName, string CityName)
         {
-            IQueryable<Job> job = _unitOfWork.JobRepository.GetByExpression(e => e.CountryName == CountryName && e.CityName == CityName &&  e.IsVerified == IsVerified.waiting);
+            IQueryable<Job> job = _unitOfWork.JobRepository.GetByExpression(e => e.CountryName == CountryName && e.CityName == CityName && e.IsVerified == IsVerified.verified);
             List<JobDTO> jobsDTO = _mapper.ProjectTo<JobDTO>(job).ToList();
-            
-            if(CityName == "كل المدن")
+
+            if (CityName == "كل المدن")
             {
                 jobsDTO = GetJobsByCountryName(CountryName);
                 return jobsDTO;
@@ -95,6 +124,26 @@ namespace TasleemDelivery.Service
 
             return jobsDTO;
         }
-     
+        public string ConfirmJobByClientID(string ClientID, int jobID)
+        {
+            Job job = _unitOfWork.JobRepository.GetByExpression(j => j.Id == jobID && j.ClientId == ClientID).FirstOrDefault();
+            job.IsVerified = IsVerified.verified;
+
+            _unitOfWork.JobRepository.Update(job);
+            _unitOfWork.SaveChanges();
+
+            return "Confirmed";
+        }
+        public string RejectJobByClientID(string ClientID, int jobID)
+        {
+            Job job = _unitOfWork.JobRepository.GetByExpression(j => j.Id == jobID && j.ClientId == ClientID).FirstOrDefault();
+            job.IsVerified = IsVerified.denied;
+
+            _unitOfWork.JobRepository.Update(job);
+            _unitOfWork.SaveChanges();
+
+            return "Rejected";
+        }
+
     }
 }

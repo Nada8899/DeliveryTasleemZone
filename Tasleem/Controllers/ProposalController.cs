@@ -57,7 +57,7 @@ namespace TasleemDelivery.Controllers
 
             if (ModelState.IsValid)
             {
-                List<AddProposalDTO> AllProposals = _proposalService.GetAllProposalsByJobID(jobID);
+                List<GetProposalDTO> AllProposals = _proposalService.GetAllProposalsByJobID(jobID);
 
                 result.Message = "Success";
                 result.IsPass = true;
@@ -85,7 +85,7 @@ namespace TasleemDelivery.Controllers
 
             if (ModelState.IsValid)
             {
-               Boolean isFound = _proposalService.checkDeliveryAvilableinJobPost(dTO);
+                Boolean isFound = _proposalService.checkDeliveryAvilableinJobPost(dTO);
 
                 result.Message = "Success";
                 result.IsPass = true;

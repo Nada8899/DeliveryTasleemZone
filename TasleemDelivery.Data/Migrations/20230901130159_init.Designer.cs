@@ -12,7 +12,7 @@ using TasleemDelivery.Data;
 namespace TasleemDelivery.Data.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230801114620_init")]
+    [Migration("20230901130159_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -330,6 +330,9 @@ namespace TasleemDelivery.Data.Migrations
                     b.Property<string>("OverView")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("PhoneNum")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<byte[]>("ProfileImg")
                         .HasColumnType("varbinary(max)");
 
@@ -340,6 +343,32 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Client");
+                });
+
+            modelBuilder.Entity("TasleemDelivery.Models.ComplaintsِnAndSuggestions", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ApplicationUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Msg")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.ToTable("ComplaintsِnAndSuggestions");
                 });
 
             modelBuilder.Entity("TasleemDelivery.Models.Delivery", b =>
@@ -443,9 +472,17 @@ namespace TasleemDelivery.Data.Migrations
                     b.Property<double>("Budget")
                         .HasColumnType("float");
 
+                    b.Property<string>("CityName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ClientId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CountryName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DeliveryId")
                         .HasColumnType("nvarchar(450)");
@@ -457,10 +494,7 @@ namespace TasleemDelivery.Data.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsVerified")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("LocationId")
+                    b.Property<int>("IsVerified")
                         .HasColumnType("int");
 
                     b.Property<int>("RequiredPoints")
@@ -475,8 +509,6 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasIndex("ClientId");
 
                     b.HasIndex("DeliveryId");
-
-                    b.HasIndex("LocationId");
 
                     b.ToTable("Job");
                 });
@@ -517,26 +549,6 @@ namespace TasleemDelivery.Data.Migrations
                     b.ToTable("Languge");
                 });
 
-            modelBuilder.Entity("TasleemDelivery.Models.Location", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Location");
-                });
-
             modelBuilder.Entity("TasleemDelivery.Models.Proposal", b =>
                 {
                     b.Property<int>("Id")
@@ -544,10 +556,6 @@ namespace TasleemDelivery.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("CoverLetter")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DeliveryId")
                         .IsRequired()
@@ -567,9 +575,6 @@ namespace TasleemDelivery.Data.Migrations
 
                     b.Property<DateTime>("ProposalDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<double>("ProposalPrice")
-                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
@@ -801,6 +806,17 @@ namespace TasleemDelivery.Data.Migrations
                     b.Navigation("ApplicationUser");
                 });
 
+            modelBuilder.Entity("TasleemDelivery.Models.ComplaintsِnAndSuggestions", b =>
+                {
+                    b.HasOne("TasleemDelivery.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany("Complaints")
+                        .HasForeignKey("ApplicationUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
+                });
+
             modelBuilder.Entity("TasleemDelivery.Models.Delivery", b =>
                 {
                     b.HasOne("TasleemDelivery.Models.EducationLevel", "EducationLevel")
@@ -841,17 +857,9 @@ namespace TasleemDelivery.Data.Migrations
                         .WithMany("PreviousJobs")
                         .HasForeignKey("DeliveryId");
 
-                    b.HasOne("TasleemDelivery.Models.Location", "Location")
-                        .WithMany("Jobs")
-                        .HasForeignKey("LocationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Client");
 
                     b.Navigation("Delivery");
-
-                    b.Navigation("Location");
                 });
 
             modelBuilder.Entity("TasleemDelivery.Models.Language", b =>
@@ -958,6 +966,8 @@ namespace TasleemDelivery.Data.Migrations
 
             modelBuilder.Entity("TasleemDelivery.Models.ApplicationUser", b =>
                 {
+                    b.Navigation("Complaints");
+
                     b.Navigation("Languges");
                 });
 
@@ -988,11 +998,6 @@ namespace TasleemDelivery.Data.Migrations
                     b.Navigation("Reviews");
 
                     b.Navigation("SavedJobs");
-                });
-
-            modelBuilder.Entity("TasleemDelivery.Models.Location", b =>
-                {
-                    b.Navigation("Jobs");
                 });
 #pragma warning restore 612, 618
         }

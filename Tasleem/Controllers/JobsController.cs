@@ -17,23 +17,32 @@ namespace TasleemDelivery.Controllers
 
         public JobsController(JobService jobService, IUnitOfWork _unitOfWork)
         {
-         
-           this.JobService = jobService;
+
+            this.JobService = jobService;
             this._unitOfWork = _unitOfWork;
         }
 
 
 
-        [HttpGet("AllJobs")]
-        public IActionResult GetAllJobs() {
-          List<JobDTO> jobs=  JobService.GetAllJobs();
+        [HttpGet("GetAllJobsWaiting")]
+        public IActionResult GetAllJobsWaiting()
+        {
+            List<JobDTO> jobs = JobService.GetAllJobsWaiting();
             return Ok(jobs);
         }
+
+        [HttpGet("GetAllJobsConfirmed")]
+        public IActionResult GetAllJobsConfirmed()
+        {
+            List<JobDTO> jobs = JobService.GetAllJobsConfirmed();
+            return Ok(jobs);
+        }
+
 
         [HttpGet("GetJobById/{JobId}")]
         public IActionResult GetJobById(int JobId)
         {
-            JobDTO jobDTO=JobService.GetJobByID(JobId);
+            JobDTO jobDTO = JobService.GetJobByID(JobId);
 
             return Ok(jobDTO);
         }
@@ -47,7 +56,7 @@ namespace TasleemDelivery.Controllers
 
             ResultDTO result = new ResultDTO();
             result.Message = "Success";
-            result.Data =job;
+            result.Data = job;
             result.IsPass = true;
             return Ok(result);
         }
@@ -66,11 +75,30 @@ namespace TasleemDelivery.Controllers
             return Ok(jobsDTO);
         }
         [HttpGet("GetJobsByCountryName/{CountryName}/{CityName}")]
-        public IActionResult GetJobsByCountryName(string CountryName,string CityName)
+        public IActionResult GetJobsByCountryName(string CountryName, string CityName)
         {
-            List<JobDTO> jobsDTO = JobService.GetJobsByCountryCityName(CountryName,CityName);
+            List<JobDTO> jobsDTO = JobService.GetJobsByCountryCityName(CountryName, CityName);
 
             return Ok(jobsDTO);
+        }
+
+        [HttpPut("ConfirmJob/{ClientID}/{JobID}")]
+        public IActionResult ConfirmJob(string ClientID, int JobID)
+        {
+            string result = JobService.ConfirmJobByClientID(ClientID, JobID);
+            _unitOfWork.CommitChanges();
+
+            return Ok(new { msg=result});
+
+        }
+        [HttpPut("RejectJob/{ClientID}/{JobID}")]
+        public IActionResult RejectJob(string ClientID, int JobID)
+        {
+            string result = JobService.RejectJobByClientID(ClientID, JobID);
+            _unitOfWork.CommitChanges();
+
+            return Ok(new { msg = result });
+
         }
 
 

@@ -15,6 +15,7 @@ namespace TasleemDelivery.Profiles
         {
             CreateMap<AddProposalDTO, Proposal>();
             CreateMap<Proposal, AddProposalDTO>();
+            CreateMap<Proposal, GetProposalDTO>();
 
         }
     }

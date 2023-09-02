@@ -21,6 +21,8 @@ namespace TasleemDelivery.Repository.UnitOfWork
         IGenericRepository<EducationLevel, int> EducationLevelRepository { get; }
         IGenericRepository<Skill, int> SkillRepository { get; }
         IGenericRepository<Job, int> JobRepository { get; }
+        IGenericRepository<ComplaintsِnAndSuggestions, int> ComplaintsِnAndSuggestionsRepository { get; }
+
         IGenericRepository<SavedJob, int> SavedJobRepository { get; }
         IGenericRepository<Language, int> LanguageRepository { get; }
         IGenericRepository<Proposal, int> ProposalRepository { get; }

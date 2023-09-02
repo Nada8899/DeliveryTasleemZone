@@ -666,6 +666,35 @@
           }
         }
       },
+      "Newtonsoft.Json/7.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "PayPal/1.9.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "7.0.1"
+        },
+        "compile": {
+          "lib/net451/PayPal.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net451/PayPal.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Buffers/4.5.1": {
         "type": "package",
         "compile": {
@@ -1116,6 +1145,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.20",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.9",
+          "PayPal": "1.9.1",
           "TasleemDelivery.Models": "1.0.0"
         },
         "compile": {
@@ -1129,7 +1159,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Microsoft.Extensions.Identity.Stores": "7.0.9"
+          "Microsoft.Extensions.Identity.Stores": "7.0.9",
+          "PayPal": "1.9.1"
         },
         "compile": {
           "bin/placeholder/TasleemDelivery.Models.dll": {}
@@ -2101,6 +2132,48 @@
         "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Newtonsoft.Json/7.0.1": {
+      "sha512": "q3V4KLetMLnt1gpAVWgtXnHjKs0UG/RalBc29u2ZKxd5t5Ze4JBL5WiiYIklJyK/5CRiIiNwigVQUo0FgbsuWA==",
+      "type": "package",
+      "path": "newtonsoft.json/7.0.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.xml",
+        "newtonsoft.json.7.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "tools/install.ps1"
+      ]
+    },
+    "PayPal/1.9.1": {
+      "sha512": "b3vq6Lc9CwSooCX2tsZ02zb7E/K/cA6EILCoMynue+ZeVuitJNqt0YwxPnp7uN0Pccob02oDlpAjRLH+GRCRxA==",
+      "type": "package",
+      "path": "paypal/1.9.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/PayPal.dll",
+        "lib/net40/PayPal.xml",
+        "lib/net45/PayPal.dll",
+        "lib/net45/PayPal.xml",
+        "lib/net451/PayPal.dll",
+        "lib/net451/PayPal.xml",
+        "paypal.1.9.1.nupkg.sha512",
+        "paypal.nuspec"
       ]
     },
     "System.Buffers/4.5.1": {
@@ -3386,27 +3459,28 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "PayPal >= 1.9.1",
       "TasleemDelivery.Data >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Electronica Care\\.nuget\\packages\\": {},
+    "C:\\Users\\nadas\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Freelance-Jobs\\New API\\TasleemDelivery.SharedValidation\\TasleemDelivery.Validation.csproj",
+      "projectUniqueName": "F:\\FreeLancing Jobs\\Zone\\TasleemAPI\\DeliveryTasleemZone\\TasleemDelivery.SharedValidation\\TasleemDelivery.Validation.csproj",
       "projectName": "TasleemDelivery.Validation",
-      "projectPath": "D:\\Freelance-Jobs\\New API\\TasleemDelivery.SharedValidation\\TasleemDelivery.Validation.csproj",
-      "packagesPath": "C:\\Users\\Electronica Care\\.nuget\\packages\\",
-      "outputPath": "D:\\Freelance-Jobs\\New API\\TasleemDelivery.SharedValidation\\obj\\",
+      "projectPath": "F:\\FreeLancing Jobs\\Zone\\TasleemAPI\\DeliveryTasleemZone\\TasleemDelivery.SharedValidation\\TasleemDelivery.Validation.csproj",
+      "packagesPath": "C:\\Users\\nadas\\.nuget\\packages\\",
+      "outputPath": "F:\\FreeLancing Jobs\\Zone\\TasleemAPI\\DeliveryTasleemZone\\TasleemDelivery.SharedValidation\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Electronica Care\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nadas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3421,8 +3495,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\Freelance-Jobs\\New API\\TasleemDelivery.Data\\TasleemDelivery.Data.csproj": {
-              "projectPath": "D:\\Freelance-Jobs\\New API\\TasleemDelivery.Data\\TasleemDelivery.Data.csproj"
+            "F:\\FreeLancing Jobs\\Zone\\TasleemAPI\\DeliveryTasleemZone\\TasleemDelivery.Data\\TasleemDelivery.Data.csproj": {
+              "projectPath": "F:\\FreeLancing Jobs\\Zone\\TasleemAPI\\DeliveryTasleemZone\\TasleemDelivery.Data\\TasleemDelivery.Data.csproj"
             }
           }
         }
@@ -3436,6 +3510,12 @@
     "frameworks": {
       "net7.0": {
         "targetAlias": "net7.0",
+        "dependencies": {
+          "PayPal": {
+            "target": "Package",
+            "version": "[1.9.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -3452,8 +3532,30 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Newtonsoft.Json 7.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'PayPal 1.9.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "PayPal",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

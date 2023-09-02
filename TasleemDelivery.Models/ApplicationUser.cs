@@ -14,6 +14,7 @@ namespace TasleemDelivery.Models
 
         public virtual IEnumerable<Language> ?Languges { get; set; }
 
+        public virtual IEnumerable<ComplaintsِnAndSuggestions > Complaints { get; set; }
 
         [DefaultValue(false)]
         public bool IsDeleted { get; set; }
