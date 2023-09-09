@@ -32,3 +32,20 @@ F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.SharedVa
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.SharedValidation\obj\Debug\net7.0\refint\TasleemDelivery.Validation.dll
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.SharedValidation\obj\Debug\net7.0\TasleemDelivery.Validation.pdb
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.SharedValidation\obj\Debug\net7.0\ref\TasleemDelivery.Validation.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.SharedValidation\bin\Debug\net7.0\TasleemDelivery.Validation.deps.json
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.SharedValidation\bin\Debug\net7.0\TasleemDelivery.Validation.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.SharedValidation\bin\Debug\net7.0\TasleemDelivery.Validation.pdb
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.SharedValidation\bin\Debug\net7.0\TasleemDelivery.Data.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.SharedValidation\bin\Debug\net7.0\TasleemDelivery.Models.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.SharedValidation\bin\Debug\net7.0\TasleemDelivery.Data.pdb
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.SharedValidation\bin\Debug\net7.0\TasleemDelivery.Models.pdb
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.SharedValidation\obj\Debug\net7.0\TasleemDelivery.Validation.csproj.AssemblyReference.cache
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.SharedValidation\obj\Debug\net7.0\TasleemDelivery.Validation.GeneratedMSBuildEditorConfig.editorconfig
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.SharedValidation\obj\Debug\net7.0\TasleemDelivery.Validation.AssemblyInfoInputs.cache
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.SharedValidation\obj\Debug\net7.0\TasleemDelivery.Validation.AssemblyInfo.cs
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.SharedValidation\obj\Debug\net7.0\TasleemDelivery.Validation.csproj.CoreCompileInputs.cache
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.SharedValidation\obj\Debug\net7.0\TasleemDelivery.Validation.csproj.CopyComplete
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.SharedValidation\obj\Debug\net7.0\TasleemDelivery.Validation.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.SharedValidation\obj\Debug\net7.0\refint\TasleemDelivery.Validation.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.SharedValidation\obj\Debug\net7.0\TasleemDelivery.Validation.pdb
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.SharedValidation\obj\Debug\net7.0\ref\TasleemDelivery.Validation.dll

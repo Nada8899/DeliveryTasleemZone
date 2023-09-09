@@ -49,3 +49,20 @@ F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Data\obj
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Data\obj\Debug\net6.0\TasleemDelivery.Data.pdb
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Data\obj\Debug\net6.0\TasleemDelivery.Data.genruntimeconfig.cache
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Data\obj\Debug\net6.0\ref\TasleemDelivery.Data.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Data\bin\Debug\net6.0\TasleemDelivery.Data.deps.json
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Data\bin\Debug\net6.0\TasleemDelivery.Data.runtimeconfig.json
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Data\bin\Debug\net6.0\TasleemDelivery.Data.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Data\bin\Debug\net6.0\TasleemDelivery.Data.pdb
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Data\bin\Debug\net6.0\TasleemDelivery.Models.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Data\bin\Debug\net6.0\TasleemDelivery.Models.pdb
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Data\obj\Debug\net6.0\TasleemDelivery.Data.csproj.AssemblyReference.cache
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Data\obj\Debug\net6.0\TasleemDelivery.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Data\obj\Debug\net6.0\TasleemDelivery.Data.AssemblyInfoInputs.cache
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Data\obj\Debug\net6.0\TasleemDelivery.Data.AssemblyInfo.cs
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Data\obj\Debug\net6.0\TasleemDelivery.Data.csproj.CoreCompileInputs.cache
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Data\obj\Debug\net6.0\TasleemDelivery.Data.csproj.CopyComplete
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Data\obj\Debug\net6.0\TasleemDelivery.Data.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Data\obj\Debug\net6.0\refint\TasleemDelivery.Data.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Data\obj\Debug\net6.0\TasleemDelivery.Data.pdb
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Data\obj\Debug\net6.0\TasleemDelivery.Data.genruntimeconfig.cache
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Data\obj\Debug\net6.0\ref\TasleemDelivery.Data.dll

@@ -44,3 +44,26 @@ D:\Freelance-Jobs\New API\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelive
 D:\Freelance-Jobs\New API\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Validation.pdb
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Validation.dll
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Validation.pdb
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Service.deps.json
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Service.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Service.pdb
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Data.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.DTO.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Models.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Repository.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Validation.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.DTO.pdb
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Repository.pdb
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Data.pdb
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Models.pdb
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\bin\Debug\net7.0\TasleemDelivery.Validation.pdb
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\obj\Debug\net7.0\TasleemDelivery.Service.csproj.AssemblyReference.cache
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\obj\Debug\net7.0\TasleemDelivery.Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\obj\Debug\net7.0\TasleemDelivery.Service.AssemblyInfoInputs.cache
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\obj\Debug\net7.0\TasleemDelivery.Service.AssemblyInfo.cs
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\obj\Debug\net7.0\TasleemDelivery.Service.csproj.CoreCompileInputs.cache
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\obj\Debug\net7.0\TasleemDelivery.Service.csproj.CopyComplete
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\obj\Debug\net7.0\TasleemDelivery.Service.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\obj\Debug\net7.0\refint\TasleemDelivery.Service.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\obj\Debug\net7.0\TasleemDelivery.Service.pdb
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Service\obj\Debug\net7.0\ref\TasleemDelivery.Service.dll

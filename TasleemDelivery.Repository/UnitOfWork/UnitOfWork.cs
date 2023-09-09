@@ -62,7 +62,7 @@ namespace TasleemDelivery.Repository.UnitOfWork
         public IGenericRepository<Delivery, string> DeliveryRepository => new GenericRepository<Delivery, string>(_context);
         public IGenericRepository<Admin, string> AdminRepository => new GenericRepository<Admin, string>(_context);
         public IGenericRepository<SubAdmin, string> SubAdminRepository => new GenericRepository<SubAdmin, string>(_context);
-        public IGenericRepository<Chat, int> ChatRepository => new GenericRepository<Chat, int>(_context);
+        public IGenericRepository<ClientChat, int> ChatRepository => new GenericRepository<ClientChat, int>(_context);
         public IGenericRepository<EducationLevel, int> EducationLevelRepository => new GenericRepository<EducationLevel, int>(_context);
         public IGenericRepository<Skill, int> SkillRepository => new GenericRepository<Skill, int>(_context);
         public IGenericRepository<Proposal, int> ProposalRepository => new GenericRepository<Proposal, int>(_context);

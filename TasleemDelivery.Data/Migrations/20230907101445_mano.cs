@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace TasleemDelivery.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class mano : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -214,6 +214,8 @@ namespace TasleemDelivery.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Msg = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
@@ -259,9 +261,7 @@ namespace TasleemDelivery.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    DeliveryMsg = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ClientMsg = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DeliveryMsgTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ClientMsgTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ClientId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     DeliveryId = table.Column<string>(type: "nvarchar(450)", nullable: false),

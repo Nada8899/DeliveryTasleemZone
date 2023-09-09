@@ -10,6 +10,7 @@ using System.Diagnostics;
 using System.Text;
 using TasleemDelivery.Config;
 using TasleemDelivery.Data;
+using TasleemDelivery.Hubs;
 using TasleemDelivery.Models;
 using TasleemDelivery.Profiles;
 
@@ -22,6 +23,8 @@ builder.Services.AddCors(options => {
 
 
 });
+
+builder.Services.AddSignalR();
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 
@@ -158,5 +161,5 @@ app.UseAuthentication();//AddAuth==>jwt
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.MapHub<ChatHub>("/Chat");
 app.Run();

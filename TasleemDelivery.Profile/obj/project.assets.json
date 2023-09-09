@@ -3672,23 +3672,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nadas\\.nuget\\packages\\": {},
+    "C:\\Users\\Electronica Care\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\FreeLancing Jobs\\Zone\\TasleemAPI\\DeliveryTasleemZone\\TasleemDelivery.Profile\\TasleemDelivery.Profiles.csproj",
+      "projectUniqueName": "D:\\Freelance-Jobs\\New API Awy\\TasleemDelivery.Profile\\TasleemDelivery.Profiles.csproj",
       "projectName": "TasleemDelivery.Profiles",
-      "projectPath": "F:\\FreeLancing Jobs\\Zone\\TasleemAPI\\DeliveryTasleemZone\\TasleemDelivery.Profile\\TasleemDelivery.Profiles.csproj",
-      "packagesPath": "C:\\Users\\nadas\\.nuget\\packages\\",
-      "outputPath": "F:\\FreeLancing Jobs\\Zone\\TasleemAPI\\DeliveryTasleemZone\\TasleemDelivery.Profile\\obj\\",
+      "projectPath": "D:\\Freelance-Jobs\\New API Awy\\TasleemDelivery.Profile\\TasleemDelivery.Profiles.csproj",
+      "packagesPath": "C:\\Users\\Electronica Care\\.nuget\\packages\\",
+      "outputPath": "D:\\Freelance-Jobs\\New API Awy\\TasleemDelivery.Profile\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\nadas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Electronica Care\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3703,11 +3703,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "F:\\FreeLancing Jobs\\Zone\\TasleemAPI\\DeliveryTasleemZone\\TasleemDelivery.DTO\\TasleemDelivery.DTO.csproj": {
-              "projectPath": "F:\\FreeLancing Jobs\\Zone\\TasleemAPI\\DeliveryTasleemZone\\TasleemDelivery.DTO\\TasleemDelivery.DTO.csproj"
+            "D:\\Freelance-Jobs\\New API Awy\\TasleemDelivery.DTO\\TasleemDelivery.DTO.csproj": {
+              "projectPath": "D:\\Freelance-Jobs\\New API Awy\\TasleemDelivery.DTO\\TasleemDelivery.DTO.csproj"
             },
-            "F:\\FreeLancing Jobs\\Zone\\TasleemAPI\\DeliveryTasleemZone\\TasleemDelivery.Models\\TasleemDelivery.Models.csproj": {
-              "projectPath": "F:\\FreeLancing Jobs\\Zone\\TasleemAPI\\DeliveryTasleemZone\\TasleemDelivery.Models\\TasleemDelivery.Models.csproj"
+            "D:\\Freelance-Jobs\\New API Awy\\TasleemDelivery.Models\\TasleemDelivery.Models.csproj": {
+              "projectPath": "D:\\Freelance-Jobs\\New API Awy\\TasleemDelivery.Models\\TasleemDelivery.Models.csproj"
             }
           }
         }
@@ -3755,7 +3755,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   },

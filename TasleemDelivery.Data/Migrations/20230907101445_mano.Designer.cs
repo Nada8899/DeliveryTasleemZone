@@ -12,8 +12,8 @@ using TasleemDelivery.Data;
 namespace TasleemDelivery.Data.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230901130159_init")]
-    partial class init
+    [Migration("20230907101445_mano")]
+    partial class mano
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -263,48 +263,6 @@ namespace TasleemDelivery.Data.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("TasleemDelivery.Models.Chat", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("ClientId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ClientMsg")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("ClientMsgTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DeliveryId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("DeliveryMsg")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("DeliveryMsgTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClientId");
-
-                    b.HasIndex("DeliveryId");
-
-                    b.ToTable("Chat");
-                });
-
             modelBuilder.Entity("TasleemDelivery.Models.Client", b =>
                 {
                     b.Property<string>("Id")
@@ -345,6 +303,41 @@ namespace TasleemDelivery.Data.Migrations
                     b.ToTable("Client");
                 });
 
+            modelBuilder.Entity("TasleemDelivery.Models.ClientChat", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClientId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ClientMsg")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ClientMsgTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeliveryId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClientId");
+
+                    b.HasIndex("DeliveryId");
+
+                    b.ToTable("Chat");
+                });
+
             modelBuilder.Entity("TasleemDelivery.Models.ComplaintsِnAndSuggestions", b =>
                 {
                     b.Property<int>("Id")
@@ -357,11 +350,17 @@ namespace TasleemDelivery.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("Msg")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -776,7 +775,18 @@ namespace TasleemDelivery.Data.Migrations
                     b.Navigation("ApplicationUser");
                 });
 
-            modelBuilder.Entity("TasleemDelivery.Models.Chat", b =>
+            modelBuilder.Entity("TasleemDelivery.Models.Client", b =>
+                {
+                    b.HasOne("TasleemDelivery.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
+                });
+
+            modelBuilder.Entity("TasleemDelivery.Models.ClientChat", b =>
                 {
                     b.HasOne("TasleemDelivery.Models.Client", "Client")
                         .WithMany()
@@ -793,17 +803,6 @@ namespace TasleemDelivery.Data.Migrations
                     b.Navigation("Client");
 
                     b.Navigation("Delivery");
-                });
-
-            modelBuilder.Entity("TasleemDelivery.Models.Client", b =>
-                {
-                    b.HasOne("TasleemDelivery.Models.ApplicationUser", "ApplicationUser")
-                        .WithMany()
-                        .HasForeignKey("Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ApplicationUser");
                 });
 
             modelBuilder.Entity("TasleemDelivery.Models.ComplaintsِnAndSuggestions", b =>

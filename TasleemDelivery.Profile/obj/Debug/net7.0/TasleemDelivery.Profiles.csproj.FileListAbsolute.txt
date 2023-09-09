@@ -40,3 +40,24 @@ D:\Freelance-Jobs\New API\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelive
 D:\Freelance-Jobs\New API\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.Validation.pdb
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.Validation.dll
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.Validation.pdb
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.Profiles.deps.json
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.Profiles.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.Profiles.pdb
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.Data.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.DTO.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.Models.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.Validation.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.DTO.pdb
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.Models.pdb
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.Data.pdb
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Profile\bin\Debug\net7.0\TasleemDelivery.Validation.pdb
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Profile\obj\Debug\net7.0\TasleemDelivery.Profiles.csproj.AssemblyReference.cache
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Profile\obj\Debug\net7.0\TasleemDelivery.Profiles.GeneratedMSBuildEditorConfig.editorconfig
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Profile\obj\Debug\net7.0\TasleemDelivery.Profiles.AssemblyInfoInputs.cache
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Profile\obj\Debug\net7.0\TasleemDelivery.Profiles.AssemblyInfo.cs
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Profile\obj\Debug\net7.0\TasleemDelivery.Profiles.csproj.CoreCompileInputs.cache
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Profile\obj\Debug\net7.0\TasleemDelivery.Profiles.csproj.CopyComplete
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Profile\obj\Debug\net7.0\TasleemDelivery.Profiles.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Profile\obj\Debug\net7.0\refint\TasleemDelivery.Profiles.dll
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Profile\obj\Debug\net7.0\TasleemDelivery.Profiles.pdb
+D:\Freelance-Jobs\New API Awy\TasleemDelivery.Profile\obj\Debug\net7.0\ref\TasleemDelivery.Profiles.dll

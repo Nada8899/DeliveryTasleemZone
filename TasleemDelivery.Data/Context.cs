@@ -16,7 +16,7 @@ namespace TasleemDelivery.Data
         {
             
         }
-        public DbSet<Chat> Chat { get; set; }
+        public DbSet<ClientChat> Chat { get; set; }
         public DbSet<Delivery> Delivery { get; set; }
 
         public DbSet<Admin> Admin { get; set; }
