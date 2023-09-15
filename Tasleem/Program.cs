@@ -37,6 +37,7 @@ builder.Services.AddAutoMapper(typeof(EduactionLevelProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(JobProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(ProposalProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(ClientProfile).Assembly);
+builder.Services.AddAutoMapper(typeof(ChatProfile).Assembly);
 
 
 
@@ -60,14 +61,11 @@ builder.Services.Configure<IdentityOptions>(options =>
 
     options.Password.RequireNonAlphanumeric = false;
 
-
-    // options.Password.RequireNonAlphanumeric = true; // Requires at least one non-alphanumeric character
     options.Password.RequiredLength = 8;
 
     options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+ اهعبتثجحخدذرزسشصضطظعغفقكلمنهويءآأؤإئىة";
 
-    // Minimum password length
-    //  options.Password.RequiredUniqueChars = 6; // Minimum number of unique characters in a password
+   
 });
 
 builder.Services.AddAuthentication(
@@ -94,7 +92,6 @@ builder.Services.AddAuthentication(
     });
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.Configure<FormOptions>(options =>
@@ -131,7 +128,7 @@ builder.Services.AddSwaggerGen(swagger =>
                                 Id = "Bearer"
                             }
                         },
-new string[] { }
+                           new string[] { }
 
                     }
                 });
@@ -161,5 +158,5 @@ app.UseAuthentication();//AddAuth==>jwt
 app.UseAuthorization();
 
 app.MapControllers();
-app.MapHub<ChatHub>("/Chat");
+app.MapHub<ChatHub>("/chatHub");
 app.Run();

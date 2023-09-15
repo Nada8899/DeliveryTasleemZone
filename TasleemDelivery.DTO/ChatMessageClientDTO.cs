@@ -14,6 +14,8 @@ namespace TasleemDelivery.DTO
         public DateTime? ClientMsgTime { get; set; }
 
         public string ClientId { get; set; }
+        public string DeliveryId { get; set; }
+
 
     }
 }

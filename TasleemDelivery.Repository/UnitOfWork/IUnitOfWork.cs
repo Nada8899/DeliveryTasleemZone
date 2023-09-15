@@ -17,7 +17,9 @@ namespace TasleemDelivery.Repository.UnitOfWork
         IGenericRepository<Delivery, string> DeliveryRepository { get; }
         IGenericRepository<Admin, string> AdminRepository { get; }
         IGenericRepository<SubAdmin, string> SubAdminRepository { get; }
-        IGenericRepository<ClientChat, int> ChatRepository { get; }
+        IGenericRepository<ClientChat, int> ClientChatRepository { get; }
+        IGenericRepository<DeliveryChat, int> DeliveryChatRepository { get; }
+
         IGenericRepository<EducationLevel, int> EducationLevelRepository { get; }
         IGenericRepository<Skill, int> SkillRepository { get; }
         IGenericRepository<Job, int> JobRepository { get; }

@@ -306,3 +306,10 @@ D:\Freelance-Jobs\New API Awy\Tasleem\obj\Debug\net7.0\refint\TasleemDelivery.dl
 D:\Freelance-Jobs\New API Awy\Tasleem\obj\Debug\net7.0\TasleemDelivery.pdb
 D:\Freelance-Jobs\New API Awy\Tasleem\obj\Debug\net7.0\TasleemDelivery.genruntimeconfig.cache
 D:\Freelance-Jobs\New API Awy\Tasleem\obj\Debug\net7.0\ref\TasleemDelivery.dll
+F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\Tasleem\bin\Debug\net7.0\System.Net.WebSockets.WebSocketProtocol.dll
+F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\Tasleem\bin\Debug\net7.0\Microsoft.AspNet.SignalR.Core.dll
+F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\Tasleem\bin\Debug\net7.0\Microsoft.AspNet.SignalR.SystemWeb.dll
+F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\Tasleem\bin\Debug\net7.0\Microsoft.Owin.dll
+F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\Tasleem\bin\Debug\net7.0\Microsoft.Owin.Host.SystemWeb.dll
+F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\Tasleem\bin\Debug\net7.0\Microsoft.Owin.Security.dll
+F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\Tasleem\bin\Debug\net7.0\Owin.dll

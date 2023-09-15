@@ -12,8 +12,8 @@ using TasleemDelivery.Data;
 namespace TasleemDelivery.Data.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230907101445_mano")]
-    partial class mano
+    [Migration("20230909152237_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

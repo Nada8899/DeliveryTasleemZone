@@ -14,9 +14,10 @@ namespace TasleemDelivery.Data
         }
        public Context(DbContextOptions dbContextOptions) : base(dbContextOptions)
         {
-            
         }
-        public DbSet<ClientChat> Chat { get; set; }
+        public DbSet<ClientChat> ClientChat { get; set; }
+        public DbSet<DeliveryChat> DeliveryChat { get; set; }
+
         public DbSet<Delivery> Delivery { get; set; }
 
         public DbSet<Admin> Admin { get; set; }

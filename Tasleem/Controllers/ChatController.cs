@@ -6,6 +6,7 @@ using TasleemDelivery.DTO;
 using TasleemDelivery.Hubs;
 using TasleemDelivery.Models;
 using TasleemDelivery.Repository.UnitOfWork;
+using TasleemDelivery.Service;
 
 namespace TasleemDelivery.Controllers
 {
@@ -15,28 +16,30 @@ namespace TasleemDelivery.Controllers
     {
         private readonly IHubContext<ChatHub> _hubContext;
         IUnitOfWork _unitOfWork;
-        IMapper _mapper;
-        public ChatController(IHubContext<ChatHub> hubContext, IUnitOfWork unitOfWork, IMapper mapper)
+        ChatService _ChatService;
+        public ChatController(IHubContext<ChatHub> hubContext, IUnitOfWork unitOfWork, ChatService ChatService)
         {
             _hubContext = hubContext;
             _unitOfWork = unitOfWork;
-            _mapper= mapper;
+            _ChatService = ChatService;
+
         }
 
-        [HttpPost("send")]
+        [HttpPost("SendMessageFromClient")]
         public async Task<IActionResult> SendMessageFromClient([FromBody] ChatMessageClientDTO message)
         {
-            // Process the message (e.g., store it in a database)
-            ClientChat chat=_mapper.Map<ClientChat>(message);
 
-            _unitOfWork.ChatRepository.Add(chat);
+
+            ChatMessageClientDTO chat = _ChatService.AddClientMsg(message);
             _unitOfWork.CommitChanges();
-
 
             // Send the message to clients using SignalR
             await _hubContext.Clients.All.SendAsync("ReceiveMessage", message.ClientId, message.ClientMsg);
-
-            return Ok("Done");
+            ResultDTO result = new ResultDTO();
+            result.Message = "Success";
+            result.Data = chat;
+            result.IsPass = true;
+            return Ok(result);
         }
 
     }

@@ -2,11 +2,12 @@
 
 namespace TasleemDelivery.Hubs
 {
-    public class ChatHub:Hub
+    public sealed class ChatHub:Hub
     {
-        public async Task SendMessage(string user, string message)
+        public async Task SendMessage(string receiverId, string message)
         {
-            await Clients.All.SendAsync("ReceiveMessage", user, message);
+           
+            await Clients.Users(new[] { Context.ConnectionId, receiverId }).SendAsync("ReceiveMessage", message);
         }
     }
 }
