@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Identity;
@@ -15,11 +16,16 @@ using TasleemDelivery.Models;
 using TasleemDelivery.Profiles;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddCors(options => {
+builder.Services.AddCors(options =>
+{
     options.AddPolicy("MyPolicy", policybuilder =>
-        //policybuilder.WithOrigins(builder.Configuration.GetSection("Cors").Value).AllowAnyMethod().AllowAnyHeader().AllowCredentials()
-        policybuilder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
-    );
+    {
+        policybuilder
+            .WithOrigins("http://localhost:4200") // Add the allowed origins for your client application.
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials(); // Allow credentials (cookies) to be included in the request.
+    });
 
 
 });
@@ -99,6 +105,16 @@ builder.Services.Configure<FormOptions>(options =>
     options.MultipartBodyLengthLimit = 104857600;
 });
 
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = GoogleDefaults.AuthenticationScheme;
+})
+             .AddGoogle(options =>
+             {
+                 options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
+                 options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+             });
+
 builder.Services.AddSwaggerGen(swagger =>
     {
     swagger.SwaggerDoc("v1", new OpenApiInfo
@@ -154,9 +170,11 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseCors("MyPolicy");//add header response Asscee-original-m
+app.UseHttpsRedirection();
+
 app.UseAuthentication();//AddAuth==>jwt
 app.UseAuthorization();
 
 app.MapControllers();
-app.MapHub<ChatHub>("/chatHub");
+app.MapHub<ChatHub>("/chat");
 app.Run();

@@ -313,3 +313,17 @@ F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\Tasleem\bin\Debug\net7.0
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\Tasleem\bin\Debug\net7.0\Microsoft.Owin.Host.SystemWeb.dll
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\Tasleem\bin\Debug\net7.0\Microsoft.Owin.Security.dll
 F:\FreeLancing Jobs\Zone\TasleemAPI\DeliveryTasleemZone\Tasleem\bin\Debug\net7.0\Owin.dll
+D:\Freelance-Jobs\New API Awy\Tasleem\bin\Debug\net7.0\Microsoft.AspNet.SignalR.Core.dll
+D:\Freelance-Jobs\New API Awy\Tasleem\bin\Debug\net7.0\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Freelance-Jobs\New API Awy\Tasleem\bin\Debug\net7.0\Microsoft.Owin.dll
+D:\Freelance-Jobs\New API Awy\Tasleem\bin\Debug\net7.0\Microsoft.Owin.Host.SystemWeb.dll
+D:\Freelance-Jobs\New API Awy\Tasleem\bin\Debug\net7.0\Microsoft.Owin.Security.dll
+D:\Freelance-Jobs\New API Awy\Tasleem\bin\Debug\net7.0\Owin.dll
+D:\Freelance-Jobs\New API Awy\Tasleem\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.Google.dll
+D:\Freelance-Jobs\New API Awy\Tasleem\bin\Debug\net7.0\Google.Api.CommonProtos.dll
+D:\Freelance-Jobs\New API Awy\Tasleem\bin\Debug\net7.0\Google.Protobuf.dll
+D:\Freelance-Jobs\New API Awy\Tasleem\bin\Debug\net7.0\Microsoft.AspNet.Identity.Core.dll
+D:\Freelance-Jobs\New API Awy\Tasleem\bin\Debug\net7.0\System.Net.Http.Formatting.dll
+D:\Freelance-Jobs\New API Awy\Tasleem\bin\Debug\net7.0\System.Web.Http.dll
+D:\Freelance-Jobs\New API Awy\Tasleem\bin\Debug\net7.0\System.Web.Http.Owin.dll
+D:\Freelance-Jobs\New API Awy\Tasleem\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll

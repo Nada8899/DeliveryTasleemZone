@@ -44,10 +44,11 @@ namespace TasleemDelivery.Service
                 delivery.ApplicationUser.ProfileImg = dataStream.ToArray();
                 delivery.ProfileImg = dataStream.ToArray();
             }
-            _unitOfWork.DeliveryRepository.Update(delivery,properties);
 
             EducationLevel educationLevel = _educationLevelService.AddEducationLevel(deliveryProfileDTO.EducationLevelDTO, delivery.Id);
             delivery.EducationLevelID = educationLevel.Id;
+
+            _unitOfWork.DeliveryRepository.Update(delivery, properties);
             _unitOfWork.SaveChanges();
 
             if(deliveryProfileDTO.Skills != null ) 

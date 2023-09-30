@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
+using Microsoft.EntityFrameworkCore;
 using TasleemDelivery.DTO;
 using TasleemDelivery.Hubs;
 using TasleemDelivery.Models;
@@ -38,6 +39,39 @@ namespace TasleemDelivery.Controllers
             ResultDTO result = new ResultDTO();
             result.Message = "Success";
             result.Data = chat;
+            result.IsPass = true;
+            return Ok(result);
+        }
+        [HttpGet("GetAllDeliveriesChatWithSpecificClient")]
+        public IActionResult GetAllDeliveriesChatWithSpecificClient(string ClientId)
+        {
+
+            List<DeliveryChat> deliveryChats = _unitOfWork.DeliveryChatRepository
+                .GetByExpression(del => del.ClientId == ClientId)
+                .Include(d=>d.Delivery)
+                .GroupBy(del => del.DeliveryId)
+                .Select(group => group.OrderByDescending(delMsgTime => delMsgTime.DeliveryMsgTime).FirstOrDefault())
+                .ToList();
+
+            foreach(var item in deliveryChats)
+            {
+                ClientChat clientChat = _unitOfWork.ClientChatRepository
+                .GetByExpression(del => del.DeliveryId == item.DeliveryId && del.ClientId ==ClientId)
+                .Include(d => d.Delivery)
+                .OrderByDescending(cliMsgTime => cliMsgTime.ClientMsgTime)
+                .FirstOrDefault();
+                                
+
+                if ( clientChat.ClientMsgTime > item.DeliveryMsgTime)
+                {
+                    item.DeliveryMsg = clientChat.ClientMsg;
+                    item.DeliveryMsgTime= clientChat.ClientMsgTime;
+                }
+            }
+
+            ResultDTO result = new ResultDTO();
+            result.Message = "Success";
+            result.Data = deliveryChats;
             result.IsPass = true;
             return Ok(result);
         }

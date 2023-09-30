@@ -25,8 +25,8 @@ namespace TasleemDelivery.Service
         {
             EducationLevel educationLevel=_mapper.Map<EducationLevel>(educationLevelDTO);
             educationLevel.DeliveryID= DeliveryId;
-
-            if (educationLevelDTO.DateFrom > educationLevelDTO.DateTo)
+            
+            if (educationLevelDTO.DateFrom < educationLevelDTO.DateTo && educationLevelDTO.DateTo <= DateTime.Now)
             {
                 _unitOfWork.EducationLevelRepository.Add(educationLevel);
                 _unitOfWork.SaveChanges();

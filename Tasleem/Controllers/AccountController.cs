@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -421,6 +423,54 @@ namespace TasleemDelivery.Controllers
                 return Ok(result);
             }
         }
+
+
+        [HttpPost("RegisterWithGoogle")]
+        [AllowAnonymous]
+        public async Task<IActionResult> RegisterWithGoogle([FromBody] RegisterDTO model)
+        {
+            try
+            {
+                // Check if the user is already authenticated with Google
+                var info = await HttpContext.AuthenticateAsync("Google");
+                if (!info.Succeeded)
+                {
+                    return BadRequest("Authentication with Google failed.");
+                }
+
+                // Check if a user with the same email already exists
+                var existingUser = await _userManager.FindByEmailAsync(info.Principal.FindFirstValue(ClaimTypes.Email));
+                if (existingUser != null)
+                {
+                    return BadRequest("A user with this email already exists.");
+                }
+
+                // Create a new user account with the Google email
+                var user = new ApplicationUser
+                {
+                    UserName = info.Principal.FindFirstValue(ClaimTypes.Email),
+                    Email = info.Principal.FindFirstValue(ClaimTypes.Email)
+                };
+
+                var result = await _userManager.CreateAsync(user);
+                if (!result.Succeeded)
+                {
+                    return BadRequest(result.Errors);
+                }
+
+                // Sign in the user
+             //   await HttpContext.SignInAsync(user.Id, user.UserName);
+
+                return Ok("User registered successfully.");
+            }
+            catch (Exception ex)
+            {
+                // Handle and log any exceptions that occur during the registration process
+                // You can customize this part based on your error handling and logging strategy
+                return BadRequest(ex.Message);
+            }
+        }
+
 
     }
 }

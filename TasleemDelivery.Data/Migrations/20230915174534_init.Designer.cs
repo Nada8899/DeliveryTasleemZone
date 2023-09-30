@@ -12,7 +12,7 @@ using TasleemDelivery.Data;
 namespace TasleemDelivery.Data.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230909152237_init")]
+    [Migration("20230915174534_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -335,7 +335,7 @@ namespace TasleemDelivery.Data.Migrations
 
                     b.HasIndex("DeliveryId");
 
-                    b.ToTable("Chat");
+                    b.ToTable("ClientChat");
                 });
 
             modelBuilder.Entity("TasleemDelivery.Models.ComplaintsِnAndSuggestions", b =>
@@ -419,6 +419,41 @@ namespace TasleemDelivery.Data.Migrations
                     b.HasIndex("EducationLevelID");
 
                     b.ToTable("Delivery");
+                });
+
+            modelBuilder.Entity("TasleemDelivery.Models.DeliveryChat", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClientId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("DeliveryId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("DeliveryMsg")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DeliveryMsgTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClientId");
+
+                    b.HasIndex("DeliveryId");
+
+                    b.ToTable("DeliveryChat");
                 });
 
             modelBuilder.Entity("TasleemDelivery.Models.EducationLevel", b =>
@@ -831,6 +866,25 @@ namespace TasleemDelivery.Data.Migrations
                     b.Navigation("ApplicationUser");
 
                     b.Navigation("EducationLevel");
+                });
+
+            modelBuilder.Entity("TasleemDelivery.Models.DeliveryChat", b =>
+                {
+                    b.HasOne("TasleemDelivery.Models.Client", "Client")
+                        .WithMany()
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TasleemDelivery.Models.Delivery", "Delivery")
+                        .WithMany()
+                        .HasForeignKey("DeliveryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Client");
+
+                    b.Navigation("Delivery");
                 });
 
             modelBuilder.Entity("TasleemDelivery.Models.EducationLevel", b =>
